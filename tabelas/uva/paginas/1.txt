@@ -1,0 +1,12 @@
+uva_id: 0,nome: Sauvignon Blanc,tipo: branco,ano_colheita: 1974,pais_origem_id: 0
+uva_id: 1,nome: Muscat Hamburg,tipo: tinto,ano_colheita: 1939,pais_origem_id: 2
+uva_id: 2,nome: Viognier,tipo: rosé,ano_colheita: 1965,pais_origem_id: 0
+uva_id: 3,nome: Riesling,tipo: branco,ano_colheita: 1953,pais_origem_id: 1
+uva_id: 4,nome: Sultana,tipo: branco,ano_colheita: 1920,pais_origem_id: 1
+uva_id: 5,nome: Saint Macaire,tipo: branco,ano_colheita: 1913,pais_origem_id: 3
+uva_id: 6,nome: Riesling,tipo: branco,ano_colheita: 1964,pais_origem_id: 1
+uva_id: 7,nome: Sauvignon Blanc,tipo: branco,ano_colheita: 1920,pais_origem_id: 2
+uva_id: 8,nome: Sauvignon Blanc,tipo: branco,ano_colheita: 2012,pais_origem_id: 0
+uva_id: 9,nome: Muscat Hamburg,tipo: rosé,ano_colheita: 1922,pais_origem_id: 3
+uva_id: 10,nome: Viognier,tipo: rosé,ano_colheita: 1915,pais_origem_id: 0
+uva_id: 11,nome: Flame Seedless,tipo: branco,ano_colheita: 1993,pais_origem_id: 0

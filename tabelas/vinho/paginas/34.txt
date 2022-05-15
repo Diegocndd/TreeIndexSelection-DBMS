@@ -1,0 +1,12 @@
+vinho_id: 396,rotulo: round-port,ano_producao: 1958,uva_id: 26,pais_producao_id: 0
+vinho_id: 397,rotulo: parallel-riesling,ano_producao: 1952,uva_id: 48,pais_producao_id: 1
+vinho_id: 398,rotulo: strong-muscat,ano_producao: 1934,uva_id: 32,pais_producao_id: 0
+vinho_id: 399,rotulo: oriented-madeira,ano_producao: 1978,uva_id: 0,pais_producao_id: 0
+vinho_id: 400,rotulo: vain-pinot,ano_producao: 1964,uva_id: 20,pais_producao_id: 1
+vinho_id: 401,rotulo: careful-grappa,ano_producao: 1928,uva_id: 54,pais_producao_id: 1
+vinho_id: 402,rotulo: relative-chardonnay,ano_producao: 1916,uva_id: 5,pais_producao_id: 3
+vinho_id: 403,rotulo: beveled-chablis,ano_producao: 1968,uva_id: 68,pais_producao_id: 1
+vinho_id: 404,rotulo: neat-barolo,ano_producao: 1920,uva_id: 4,pais_producao_id: 2
+vinho_id: 405,rotulo: maximum-cabernet,ano_producao: 1970,uva_id: 2,pais_producao_id: 0
+vinho_id: 406,rotulo: juvenile-champagne,ano_producao: 1958,uva_id: 52,pais_producao_id: 0
+vinho_id: 407,rotulo: ascent-claret,ano_producao: 1996,uva_id: 22,pais_producao_id: 2

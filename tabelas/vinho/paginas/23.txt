@@ -1,0 +1,12 @@
+vinho_id: 264,rotulo: energetic-rosé,ano_producao: 1978,uva_id: 24,pais_producao_id: 2
+vinho_id: 265,rotulo: cold-madeira,ano_producao: 2014,uva_id: 51,pais_producao_id: 2
+vinho_id: 266,rotulo: heather-chianti,ano_producao: 1958,uva_id: 52,pais_producao_id: 0
+vinho_id: 267,rotulo: hot-grappa,ano_producao: 1996,uva_id: 22,pais_producao_id: 0
+vinho_id: 268,rotulo: direct-chablis,ano_producao: 1994,uva_id: 15,pais_producao_id: 0
+vinho_id: 269,rotulo: faded-amarone,ano_producao: 1910,uva_id: 56,pais_producao_id: 0
+vinho_id: 270,rotulo: swift-chianti,ano_producao: 1916,uva_id: 38,pais_producao_id: 2
+vinho_id: 271,rotulo: taxonomic-banylus,ano_producao: 1958,uva_id: 52,pais_producao_id: 2
+vinho_id: 272,rotulo: metal-moscato,ano_producao: 2020,uva_id: 41,pais_producao_id: 1
+vinho_id: 273,rotulo: crabby-shiraz,ano_producao: 1974,uva_id: 57,pais_producao_id: 1
+vinho_id: 274,rotulo: new-mead,ano_producao: 1916,uva_id: 38,pais_producao_id: 0
+vinho_id: 275,rotulo: bounded-merlot,ano_producao: 2002,uva_id: 13,pais_producao_id: 3

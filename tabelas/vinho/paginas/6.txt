@@ -1,0 +1,12 @@
+vinho_id: 60,rotulo: salmon-blanc,ano_producao: 1916,uva_id: 47,pais_producao_id: 2
+vinho_id: 61,rotulo: cheerful-burgundy,ano_producao: 1988,uva_id: 18,pais_producao_id: 0
+vinho_id: 62,rotulo: smoggy-muscat,ano_producao: 1956,uva_id: 3,pais_producao_id: 0
+vinho_id: 63,rotulo: elaborate-banylus,ano_producao: 1958,uva_id: 34,pais_producao_id: 2
+vinho_id: 64,rotulo: large-mead,ano_producao: 1936,uva_id: 63,pais_producao_id: 1
+vinho_id: 65,rotulo: elaborate-pinot,ano_producao: 1952,uva_id: 48,pais_producao_id: 1
+vinho_id: 66,rotulo: inverse-chinon,ano_producao: 1980,uva_id: 16,pais_producao_id: 1
+vinho_id: 67,rotulo: parallel-albariño,ano_producao: 1958,uva_id: 43,pais_producao_id: 3
+vinho_id: 68,rotulo: smoggy-barolo,ano_producao: 1996,uva_id: 29,pais_producao_id: 0
+vinho_id: 69,rotulo: sunny-sauvignon,ano_producao: 1912,uva_id: 45,pais_producao_id: 0
+vinho_id: 70,rotulo: brutal-madeira,ano_producao: 1916,uva_id: 5,pais_producao_id: 0
+vinho_id: 71,rotulo: silver-dolcetto,ano_producao: 1928,uva_id: 36,pais_producao_id: 3

@@ -1,0 +1,12 @@
+vinho_id: 108,rotulo: exothermic-banylus,ano_producao: 1942,uva_id: 35,pais_producao_id: 0
+vinho_id: 109,rotulo: fast-madeira,ano_producao: 1948,uva_id: 44,pais_producao_id: 1
+vinho_id: 110,rotulo: chartreuse-rosé,ano_producao: 1950,uva_id: 19,pais_producao_id: 1
+vinho_id: 111,rotulo: latent-claret,ano_producao: 1912,uva_id: 64,pais_producao_id: 2
+vinho_id: 112,rotulo: freezing-prosecco,ano_producao: 1920,uva_id: 7,pais_producao_id: 3
+vinho_id: 113,rotulo: adiabatic-sauvignon,ano_producao: 1994,uva_id: 15,pais_producao_id: 3
+vinho_id: 114,rotulo: plumb-shiraz,ano_producao: 2002,uva_id: 13,pais_producao_id: 1
+vinho_id: 115,rotulo: ternary-port,ano_producao: 1976,uva_id: 14,pais_producao_id: 2
+vinho_id: 116,rotulo: open-port,ano_producao: 1968,uva_id: 65,pais_producao_id: 1
+vinho_id: 117,rotulo: coplanar-chablis,ano_producao: 1974,uva_id: 31,pais_producao_id: 1
+vinho_id: 118,rotulo: indigo-bardolino,ano_producao: 1920,uva_id: 62,pais_producao_id: 1
+vinho_id: 119,rotulo: arid-muscat,ano_producao: 1998,uva_id: 50,pais_producao_id: 2

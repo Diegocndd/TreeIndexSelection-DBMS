@@ -1,0 +1,12 @@
+uva_id: 36,nome: Saint Macaire,tipo: rosé,ano_colheita: 1924,pais_origem_id: 2
+uva_id: 37,nome: Chardonnay,tipo: rosé,ano_colheita: 1927,pais_origem_id: 2
+uva_id: 38,nome: Riesling,tipo: tinto,ano_colheita: 1913,pais_origem_id: 3
+uva_id: 39,nome: Flame Seedless,tipo: rosé,ano_colheita: 1954,pais_origem_id: 3
+uva_id: 40,nome: Purple Cornichon,tipo: tinto,ano_colheita: 1919,pais_origem_id: 0
+uva_id: 41,nome: Saint Macaire,tipo: branco,ano_colheita: 2015,pais_origem_id: 0
+uva_id: 42,nome: Viognier,tipo: rosé,ano_colheita: 1989,pais_origem_id: 3
+uva_id: 43,nome: Saint Macaire,tipo: branco,ano_colheita: 1954,pais_origem_id: 2
+uva_id: 44,nome: Riesling,tipo: tinto,ano_colheita: 1939,pais_origem_id: 1
+uva_id: 45,nome: Viognier,tipo: rosé,ano_colheita: 1911,pais_origem_id: 3
+uva_id: 46,nome: Purple Cornichon,tipo: tinto,ano_colheita: 2013,pais_origem_id: 0
+uva_id: 47,nome: Riesling,tipo: branco,ano_colheita: 1913,pais_origem_id: 2

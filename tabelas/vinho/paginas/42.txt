@@ -1,0 +1,8 @@
+vinho_id: 492,rotulo: another-sauvignon,ano_producao: 1920,uva_id: 4,pais_producao_id: 0
+vinho_id: 493,rotulo: stone-moscato,ano_producao: 1996,uva_id: 11,pais_producao_id: 1
+vinho_id: 494,rotulo: beige-chablis,ano_producao: 1912,uva_id: 45,pais_producao_id: 3
+vinho_id: 495,rotulo: feasible-marsanne,ano_producao: 1992,uva_id: 33,pais_producao_id: 3
+vinho_id: 496,rotulo: tart-prosecco,ano_producao: 1952,uva_id: 48,pais_producao_id: 2
+vinho_id: 497,rotulo: angry-noir,ano_producao: 1948,uva_id: 44,pais_producao_id: 1
+vinho_id: 498,rotulo: avocado-champagne,ano_producao: 1958,uva_id: 26,pais_producao_id: 0
+vinho_id: 499,rotulo: brutal-sherry,ano_producao: 2016,uva_id: 72,pais_producao_id: 1

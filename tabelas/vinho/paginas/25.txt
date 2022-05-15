@@ -1,0 +1,12 @@
+vinho_id: 288,rotulo: chief-sherry,ano_producao: 2020,uva_id: 41,pais_producao_id: 3
+vinho_id: 289,rotulo: staff-burgundy,ano_producao: 2014,uva_id: 8,pais_producao_id: 2
+vinho_id: 290,rotulo: taxonomic-noir,ano_producao: 1948,uva_id: 49,pais_producao_id: 2
+vinho_id: 291,rotulo: affable-chianti,ano_producao: 1958,uva_id: 26,pais_producao_id: 0
+vinho_id: 292,rotulo: happy-claret,ano_producao: 1968,uva_id: 65,pais_producao_id: 0
+vinho_id: 293,rotulo: formal-prosecco,ano_producao: 1920,uva_id: 4,pais_producao_id: 3
+vinho_id: 294,rotulo: calm-chianti,ano_producao: 2010,uva_id: 28,pais_producao_id: 1
+vinho_id: 295,rotulo: clever-noir,ano_producao: 1928,uva_id: 36,pais_producao_id: 2
+vinho_id: 296,rotulo: coffee-dolcetto,ano_producao: 1934,uva_id: 37,pais_producao_id: 2
+vinho_id: 297,rotulo: isochoric-claret,ano_producao: 1920,uva_id: 7,pais_producao_id: 3
+vinho_id: 298,rotulo: sensitive-lambrusco,ano_producao: 1912,uva_id: 64,pais_producao_id: 0
+vinho_id: 299,rotulo: naive-barbaresco,ano_producao: 1980,uva_id: 16,pais_producao_id: 1

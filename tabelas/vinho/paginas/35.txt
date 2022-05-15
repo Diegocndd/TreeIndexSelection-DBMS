@@ -1,0 +1,12 @@
+vinho_id: 408,rotulo: basic-riesling,ano_producao: 1958,uva_id: 52,pais_producao_id: 1
+vinho_id: 409,rotulo: fancy-dolcetto,ano_producao: 1928,uva_id: 36,pais_producao_id: 2
+vinho_id: 410,rotulo: maroon-chablis,ano_producao: 1920,uva_id: 73,pais_producao_id: 2
+vinho_id: 411,rotulo: happy-chardonnay,ano_producao: 1920,uva_id: 73,pais_producao_id: 3
+vinho_id: 412,rotulo: broad-cabernet,ano_producao: 1980,uva_id: 16,pais_producao_id: 2
+vinho_id: 413,rotulo: impulsive-albariño,ano_producao: 2016,uva_id: 72,pais_producao_id: 0
+vinho_id: 414,rotulo: lower-beaujolais,ano_producao: 1978,uva_id: 0,pais_producao_id: 2
+vinho_id: 415,rotulo: cheerful-arneis,ano_producao: 1998,uva_id: 50,pais_producao_id: 0
+vinho_id: 416,rotulo: beige-sherry,ano_producao: 1948,uva_id: 44,pais_producao_id: 0
+vinho_id: 417,rotulo: gentle-beaujolais,ano_producao: 1956,uva_id: 3,pais_producao_id: 0
+vinho_id: 418,rotulo: icy-prosecco,ano_producao: 1988,uva_id: 61,pais_producao_id: 1
+vinho_id: 419,rotulo: olive-albariño,ano_producao: 1912,uva_id: 64,pais_producao_id: 3

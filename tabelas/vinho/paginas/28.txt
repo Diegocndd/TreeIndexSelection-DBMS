@@ -1,0 +1,12 @@
+vinho_id: 324,rotulo: complicated-shiraz,ano_producao: 1920,uva_id: 62,pais_producao_id: 3
+vinho_id: 325,rotulo: cloudy-amarone,ano_producao: 1978,uva_id: 24,pais_producao_id: 3
+vinho_id: 326,rotulo: denim-muscat,ano_producao: 1970,uva_id: 55,pais_producao_id: 2
+vinho_id: 327,rotulo: soluble-pinot,ano_producao: 1934,uva_id: 32,pais_producao_id: 0
+vinho_id: 328,rotulo: ancient-auslese,ano_producao: 1934,uva_id: 37,pais_producao_id: 3
+vinho_id: 329,rotulo: ambitious-mead,ano_producao: 1916,uva_id: 5,pais_producao_id: 0
+vinho_id: 330,rotulo: quiet-champagne,ano_producao: 1974,uva_id: 57,pais_producao_id: 0
+vinho_id: 331,rotulo: leather-lambrusco,ano_producao: 1958,uva_id: 43,pais_producao_id: 2
+vinho_id: 332,rotulo: shrewd-mead,ano_producao: 1948,uva_id: 44,pais_producao_id: 3
+vinho_id: 333,rotulo: cruel-moscato,ano_producao: 1974,uva_id: 31,pais_producao_id: 3
+vinho_id: 334,rotulo: resolving-barbaresco,ano_producao: 1948,uva_id: 44,pais_producao_id: 0
+vinho_id: 335,rotulo: figurative-amarone,ano_producao: 1964,uva_id: 60,pais_producao_id: 1

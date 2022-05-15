@@ -1,0 +1,12 @@
+vinho_id: 228,rotulo: coincident-sauvignon,ano_producao: 1960,uva_id: 74,pais_producao_id: 3
+vinho_id: 229,rotulo: respectful-amarone,ano_producao: 2010,uva_id: 28,pais_producao_id: 3
+vinho_id: 230,rotulo: teal-chinon,ano_producao: 1942,uva_id: 35,pais_producao_id: 0
+vinho_id: 231,rotulo: staccato-zinfandel,ano_producao: 1964,uva_id: 20,pais_producao_id: 3
+vinho_id: 232,rotulo: brave-arneis,ano_producao: 1942,uva_id: 35,pais_producao_id: 2
+vinho_id: 233,rotulo: rust-muscat,ano_producao: 1924,uva_id: 9,pais_producao_id: 0
+vinho_id: 234,rotulo: stubborn-lambrusco,ano_producao: 2016,uva_id: 72,pais_producao_id: 0
+vinho_id: 235,rotulo: internal-rosé,ano_producao: 1950,uva_id: 23,pais_producao_id: 1
+vinho_id: 236,rotulo: teal-mead,ano_producao: 1936,uva_id: 63,pais_producao_id: 3
+vinho_id: 237,rotulo: ternary-chablis,ano_producao: 1952,uva_id: 48,pais_producao_id: 1
+vinho_id: 238,rotulo: resultant-arneis,ano_producao: 1942,uva_id: 35,pais_producao_id: 2
+vinho_id: 239,rotulo: internal-albariño,ano_producao: 1950,uva_id: 23,pais_producao_id: 0

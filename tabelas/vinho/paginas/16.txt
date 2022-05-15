@@ -1,0 +1,12 @@
+vinho_id: 180,rotulo: one-sherry,ano_producao: 1916,uva_id: 47,pais_producao_id: 2
+vinho_id: 181,rotulo: honest-bardolino,ano_producao: 1916,uva_id: 38,pais_producao_id: 0
+vinho_id: 182,rotulo: rigid-chinon,ano_producao: 1934,uva_id: 32,pais_producao_id: 1
+vinho_id: 183,rotulo: teal-bardolino,ano_producao: 1996,uva_id: 22,pais_producao_id: 1
+vinho_id: 184,rotulo: parallel-blanc,ano_producao: 1924,uva_id: 9,pais_producao_id: 3
+vinho_id: 185,rotulo: cautious-dolcetto,ano_producao: 1968,uva_id: 68,pais_producao_id: 1
+vinho_id: 186,rotulo: chalky-champagne,ano_producao: 1992,uva_id: 33,pais_producao_id: 0
+vinho_id: 187,rotulo: stern-champagne,ano_producao: 2014,uva_id: 51,pais_producao_id: 2
+vinho_id: 188,rotulo: burning-chinon,ano_producao: 1924,uva_id: 9,pais_producao_id: 1
+vinho_id: 189,rotulo: decidable-prosecco,ano_producao: 1988,uva_id: 18,pais_producao_id: 3
+vinho_id: 190,rotulo: relative-auslese,ano_producao: 1974,uva_id: 57,pais_producao_id: 1
+vinho_id: 191,rotulo: green-muscat,ano_producao: 1978,uva_id: 0,pais_producao_id: 0

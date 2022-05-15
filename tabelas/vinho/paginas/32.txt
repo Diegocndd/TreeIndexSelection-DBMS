@@ -1,0 +1,12 @@
+vinho_id: 372,rotulo: internal-zinfandel,ano_producao: 1980,uva_id: 16,pais_producao_id: 3
+vinho_id: 373,rotulo: brute-lambrusco,ano_producao: 2016,uva_id: 72,pais_producao_id: 3
+vinho_id: 374,rotulo: primary-barbaresco,ano_producao: 1934,uva_id: 32,pais_producao_id: 3
+vinho_id: 375,rotulo: curious-noir,ano_producao: 2010,uva_id: 28,pais_producao_id: 3
+vinho_id: 376,rotulo: optical-pinot,ano_producao: 1916,uva_id: 12,pais_producao_id: 0
+vinho_id: 377,rotulo: sparse-mead,ano_producao: 1912,uva_id: 45,pais_producao_id: 3
+vinho_id: 378,rotulo: serious-amarone,ano_producao: 1958,uva_id: 34,pais_producao_id: 0
+vinho_id: 379,rotulo: bounded-lambrusco,ano_producao: 1916,uva_id: 5,pais_producao_id: 3
+vinho_id: 380,rotulo: ancient-prosecco,ano_producao: 1968,uva_id: 68,pais_producao_id: 2
+vinho_id: 381,rotulo: achromatic-malbec,ano_producao: 2016,uva_id: 46,pais_producao_id: 1
+vinho_id: 382,rotulo: adventurous-madeira,ano_producao: 1978,uva_id: 24,pais_producao_id: 0
+vinho_id: 383,rotulo: daring-claret,ano_producao: 1968,uva_id: 65,pais_producao_id: 3
