@@ -1,13 +1,20 @@
+"""
+As funções de parse leem o conteúdo das páginas e retornam dicionários com as informações
+para serem tratadas pelo programa.
+"""
 
+from ntpath import join
+from random import random, randint
 import math
 import os
-from utils import *
+from utils import getRangeOfKey
 from editIndex import editIndex
 from editLeaf import editLeaf
 import sys
 
-ORDER = 10
+ORDER = 4
 ERROR_ROOT = 'root node does not exist'
+ATRIBUTO = 'ano_colheita'
 
 def generateId(type):
     f = open("current_ids.txt", "r")
@@ -183,15 +190,16 @@ def createLeaf(data, leafName='null', parent='null', next='null', back='null', m
             id_element = element['id']
             tipo = element['tipo']
             rotulo = element['rotulo']
+            ano_colheita = element['ano_colheita']
 
-            pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(str(id_element), rotulo, str(key), tipo)
+            pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(str(id_element), rotulo, str(ano_colheita), tipo)
         
         f.write(pageContent)
         f.close()
         
 
 def ORDERDataNode(data):
-    return sorted(data, key=lambda d: int(d['key'])) 
+    return sorted(data, key=lambda d: d['key']) 
 
 def checkLeafMinimum(key, childNode, parentNode):
     currentContent = parseIndex(parentNode)
@@ -245,7 +253,7 @@ def belowMinimum(titleNode):
             page_id = None
 
             for el in backNode[:-3]:
-                if int(el["key"]) > max_val:
+                if el["key"] > max_val:
                     max_val = int(el["key"])
                     page_id = el["page_id"]
 
@@ -371,7 +379,8 @@ def addInLeaf(titleNode, data, pageId=None):
             id_element = element['id']
             tipo = element['tipo']
             rotulo = element['rotulo']
-            pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(str(id_element), rotulo, str(key), tipo)
+            ano_colheita = element['ano_colheita']
+            pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(str(id_element), rotulo, str(ano_colheita), tipo)
 
         f.write(pageContent)
         f.close()
@@ -410,8 +419,9 @@ def addInLeaf(titleNode, data, pageId=None):
                 id_element = element['id']
                 tipo = element['tipo']
                 rotulo = element['rotulo']
+                ano_colheita = element['ano_colheita']
 
-                pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(str(id_element), rotulo, str(key), tipo)
+                pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(str(id_element), rotulo, str(ano_colheita), tipo)
             
             f.write(pageContent)
             f.close() 
@@ -826,8 +836,8 @@ def readInput():
     return prim_l, ops
 
 def fetchCSV(ano_colheita):
-    # buscar registros com ano_colheita especificado no vinho.csv e retornar como dicionarios
-    f = open("vinho.csv", "r")
+    # buscar registros com ano_colheita especificado no vinhos.csv e retornar como dicionarios
+    f = open("vinhos.csv", "r")
     registros = f.read().split('\n')
     registros[:] = [x for x in registros if x]
 
@@ -836,6 +846,7 @@ def fetchCSV(ano_colheita):
     dataList = []
 
     for reg in registros:
+        print(reg)
         data = {}
         reg_split = reg.split(',')
         ano_c = int(reg_split[2])
@@ -901,7 +912,7 @@ def searchInLeaf(page, opKey, mode):
         leafContent = parseLeaf(page)
 
         for elem in leafContent[:-3]:
-            if int(elem["key"]) > int(opKey):
+            if str(elem["key"]) > str(opKey):
                 page_ids.append(elem["page_id"])
 
         next = leafContent[-3]['next']    
@@ -915,7 +926,7 @@ def searchInLeaf(page, opKey, mode):
         leafContent = parseLeaf(page)
 
         for elem in leafContent[:-3]:
-            if int(elem["key"]) < int(opKey):
+            if str(elem["key"]) < str(opKey):
                 page_ids.append(elem["page_id"])
 
         back = leafContent[-1]['back']    
@@ -951,15 +962,13 @@ def search(opKey, mode):
 
             while(page.split('_')[0] != 'leaf'):
                 actualNode = parseIndex(page)
+                print(actualNode)
                 referenceNode, position = getRangeOfKey(str(opKey), actualNode)
                 page = actualNode[referenceNode][position]
 
             registers = searchInLeaf(page, opKey, mode) # retorna as tuplas encontradas 
         
     return registers
-
-
-
 
 if len(sys.argv) > 1:
     if sys.argv[1] == "-reset":
@@ -977,14 +986,21 @@ if len(sys.argv) > 1:
         f.close()
         sys.exit()
 
-modo_teste = False
+modo_teste = True
 if modo_teste:
     # testar comandos sem o arquivo de entrada
-
-    #insertData({"key": "5", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": '6', "tipo": "rose", "rotulo": "bla_bla", "id": '9'})
-    #insertData({"key": '7', "tipo": "cabernet", "rotulo": "xxxxxx", "id": '155'})
-    #insertData({"key": "8", "tipo": "ssss", "rotulo": "bla_bla", "id": "30"})
+    # insertData({"key": "a", "tipo": "lalal", "rotulo": "opopopo", "id": "19", "ano_colheita": "1984"})
+    # insertData({"key": 'b', "tipo": "rose", "rotulo": "bla_bla", "id": '9', "ano_colheita": "2021"})
+    # insertData({"key": 'c', "tipo": "cabernet", "rotulo": "xxxxxx", "id": '155', "ano_colheita": "1904"})
+    # insertData({"key": "d", "tipo": "ssss", "rotulo": "bla_bla", "id": "30", "ano_colheita": "1866"})
+    # insertData({"key": "kakaka", "tipo": "ssss", "rotulo": "bla_bla", "id": "30", "ano_colheita": "2003"})
+    # insertData({"key": "uuu", "tipo": "hhhhh", "rotulo": "xyxyxyxy", "id": "344", "ano_colheita": "2003"})
+    # insertData({"key": "ui", "tipo": "lalal", "rotulo": "opopopo", "id": "19", "ano_colheita": "2003"})
+    # insertData({"key": "OP", "tipo": "lalal", "rotulo": "opopopo", "id": "20", "ano_colheita": "2003"})
+    # insertData({"key": "eeee", "tipo": "lalal", "rotulo": "opopopo", "id": "21", "ano_colheita": "2003"})
+    # insertData({"key": "leleo", "tipo": "lalal", "rotulo": "opopopo", "id": "22", "ano_colheita": "2003"})
+    # print(search('d', '='))
+    # removeData('eeee')
     #insertData({"key": "9", "tipo": "hhhhh", "rotulo": "xyxyxyxy", "id": "344"})
     #insertData({"key": "10", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
     #insertData({"key": "11", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
@@ -1010,7 +1026,6 @@ if modo_teste:
     #insertData({"key": "21", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
     #insertData({"key": "22", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
     #insertData({"key": "23", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #removeData(23)
     #insertData({"key": "24", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
     #insertData({"key": "25", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
     #insertData({"key": "26", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
