@@ -1,8 +1,8 @@
 from hashlib import new
 
 
-def editIndex(titleNode, key, newLeft=None, newRight=None, newKey=None):
-    f = open("paginas/indices/" + titleNode + ".txt", "r")
+def editIndex(titleNode, key, newLeft=None, newRight=None, newKey=None, path_to_tree=''):
+    f = open(path_to_tree + "paginas/indices/" + titleNode + ".txt", "r")
     elements = f.read().split('\n')
     elements_copy = elements
     elements[:] = [x for x in elements if x]
@@ -59,7 +59,7 @@ def editIndex(titleNode, key, newLeft=None, newRight=None, newKey=None):
 
     f.close()
 
-    f = open("paginas/indices/" + titleNode + ".txt", "w")
+    f = open(path_to_tree + "paginas/indices/" + titleNode + ".txt", "w")
     f.write(newContent)
     f.close()
 

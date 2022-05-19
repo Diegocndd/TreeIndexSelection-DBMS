@@ -1,5 +1,5 @@
-def editLeaf(titleNode, newNext=None, newParent=None, newBack=None):
-    f = open("paginas/folhas/" + titleNode + ".txt", "r")
+def editLeaf(titleNode, newNext=None, newParent=None, newBack=None, path_to_tree=''):
+    f = open(path_to_tree + "paginas/folhas/" + titleNode + ".txt", "r")
     elements = f.read().split('\n')
     elements[:] = [x for x in elements if x]
 
@@ -33,6 +33,6 @@ def editLeaf(titleNode, newNext=None, newParent=None, newBack=None):
                 newContent += el + '\n'
 
     f.close()
-    f = open("paginas/folhas/" + titleNode + ".txt", "w")
+    f = open(path_to_tree + "paginas/folhas/" + titleNode + ".txt", "w")
     f.write(newContent)
     f.close()

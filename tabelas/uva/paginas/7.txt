@@ -1,3 +1,0 @@
-uva_id: 72,nome: Ruby Seedless,tipo: rosé,ano_colheita: 2013,pais_origem_id: 0
-uva_id: 73,nome: Sultana,tipo: rosé,ano_colheita: 1915,pais_origem_id: 1
-uva_id: 74,nome: Flame Seedless,tipo: branco,ano_colheita: 1960,pais_origem_id: 2

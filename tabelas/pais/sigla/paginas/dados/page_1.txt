@@ -1,0 +1,2 @@
+pais_id: 0,nome: Argentina,sigla: ARG
+pais_id: 3,nome: Argentina,sigla: ARG

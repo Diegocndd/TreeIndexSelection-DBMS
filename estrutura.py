@@ -2,6 +2,7 @@ import os
 import shutil
 from utils import *
 from pathlib import Path
+from indices import createTree
 
 class Tupla:
     def __init__(self):
@@ -29,98 +30,122 @@ class Tabela:
 
     def carregarDados(self):
         dir_name = "tabelas/"+self.nome_tab
-        if os.path.exists(dir_name):
-            shutil.rmtree(dir_name)
-            
+        print(dir_name)
+        if os.path.exists(dir_name) == False:
+            os.makedirs(dir_name)
+            # shutil.rmtree(dir_name)
 
-        Path(dir_name+"/paginas").mkdir(parents=True, exist_ok=True)
-        Path(dir_name+"/dados").mkdir(parents=True, exist_ok=True)
-        Path(dir_name+"/folhas").mkdir(parents=True, exist_ok=True)
-        Path(dir_name+"/indices").mkdir(parents=True, exist_ok=True)
-        f = open(dir_name+"/pag_count.txt", "w")
-        f.write("0")
-        f.close()
-
-        # Leitura CSV
         f = open(self.nome_arq, "r")
         registros = f.read().split('\n')
-        registros[:] = [x for x in registros if x]
+        attrs = registros.pop(0)
+        attrs = attrs.split(',')
 
-        colunas = registros[0].split(',')
-        self.esquema.colunas = colunas
-        self.esquema.qtd_cols = len(colunas)
-        registros.pop(0) # remover header
+        for attr in attrs:
+            dataArr = []
+            for reg in registros:
+                data = {}
+                reg = reg.split(',')
+                if (len(reg[0]) > 0):
+                    for at in attrs:
+                        indexAttr = attrs.index(at)
+                        if at == attr:
+                            data['key'] = reg[indexAttr]
+                        data[at] = reg[indexAttr]
+                    dataArr.append(data)
 
-        dataList = []
+            newAttrPath = dir_name + '/' + attr
+            if os.path.exists(newAttrPath) == False:
+                os.makedirs(newAttrPath)
+            print('criando' + attr)
+            createTree(self.nome_arq, attr, attribute=attr, table=self.nome_tab, dataToAdd=dataArr)
+        # Path(dir_name+"/paginas").mkdir(parents=True, exist_ok=True)
+        # Path(dir_name+"/dados").mkdir(parents=True, exist_ok=True)
+        # Path(dir_name+"/folhas").mkdir(parents=True, exist_ok=True)
+        # Path(dir_name+"/indices").mkdir(parents=True, exist_ok=True)
+        # f = open(dir_name+"/pag_count.txt", "w")
+        # f.write("0")
+        # f.close()
 
-        for reg in registros:
-            data = {}
-            reg_split = reg.split(',')
-            for i, col in enumerate(colunas):
-                data[col] = reg_split[i]
-            dataList.append(data)
+        # # Leitura CSV
+        # f = open(self.nome_arq, "r")
+        # registros = f.read().split('\n')
+        # registros[:] = [x for x in registros if x]
 
-        totalToInsert = len(dataList)
+        # colunas = registros[0].split(',')
+        # self.esquema.colunas = colunas
+        # self.esquema.qtd_cols = len(colunas)
+        # registros.pop(0) # remover header
 
-        f.close()
+        # dataList = []
 
-        cur_page = currentPage(self.nome_tab)
+        # for reg in registros:
+        #     data = {}
+        #     reg_split = reg.split(',')
+        #     for i, col in enumerate(colunas):
+        #         data[col] = reg_split[i]
+        #     dataList.append(data)
 
-        cur_pageList = parsePage(self.nome_tab, cur_page)
+        # totalToInsert = len(dataList)
+
+        # f.close()
+
+        # cur_page = currentPage(self.nome_tab)
+
+        # cur_pageList = parsePage(self.nome_tab, cur_page)
         
-        if cur_pageList is None:
-            cur_page += 1
-            f = open(dir_name+"/paginas/"+str(cur_page)+".txt", "w")
+        # if cur_pageList is None:
+        #     cur_page += 1
+        #     f = open(dir_name+"/paginas/"+str(cur_page)+".txt", "w")
 
-            f.close()
-            updatePageCount(self.nome_tab, cur_page)
+        #     f.close()
+        #     updatePageCount(self.nome_tab, cur_page)
 
-        cur_pageList = parsePage(self.nome_tab,cur_page)
-        rest = 12 - len(cur_pageList)
+        # cur_pageList = parsePage(self.nome_tab,cur_page)
+        # rest = 12 - len(cur_pageList)
 
-        divs = []
-        if rest == 0:
-            cur_page += 1
-        else:
-            divs.append(dataList[:rest])
-            dataList = dataList[rest:]
-            totalToInsert = len(dataList)
+        # divs = []
+        # if rest == 0:
+        #     cur_page += 1
+        # else:
+        #     divs.append(dataList[:rest])
+        #     dataList = dataList[rest:]
+        #     totalToInsert = len(dataList)
         
-        qntd = totalToInsert // 12
-        for i in range(qntd):
-            divs.append(dataList[i*12:(i+1)*12])
+        # qntd = totalToInsert // 12
+        # for i in range(qntd):
+        #     divs.append(dataList[i*12:(i+1)*12])
         
-        r = totalToInsert % 12
-        if r != 0:
-            divs.append(dataList[-r:])
+        # r = totalToInsert % 12
+        # if r != 0:
+        #     divs.append(dataList[-r:])
 
-        for d in divs:
-            pageContent = ""
-            newPage(self.nome_tab, cur_page)
-            cur_pageList = parsePage(self.nome_tab,cur_page)
+        # for d in divs:
+        #     pageContent = ""
+        #     newPage(self.nome_tab, cur_page)
+        #     cur_pageList = parsePage(self.nome_tab,cur_page)
             
-            for element in cur_pageList:
+        #     for element in cur_pageList:
                 
-                for i, col in enumerate(colunas):
-                    pageContent += col + ": " + element[col]
-                    if i != self.esquema.qtd_cols-1:
-                        pageContent += ","
-                pageContent += "\n"
+        #         for i, col in enumerate(colunas):
+        #             pageContent += col + ": " + element[col]
+        #             if i != self.esquema.qtd_cols-1:
+        #                 pageContent += ","
+        #         pageContent += "\n"
 
-            for element in d:
-                for i, col in enumerate(colunas):
-                    pageContent += col + ": " + element[col]
-                    if i != self.esquema.qtd_cols-1:
-                        pageContent += ","
-                pageContent += "\n"
+        #     for element in d:
+        #         for i, col in enumerate(colunas):
+        #             pageContent += col + ": " + element[col]
+        #             if i != self.esquema.qtd_cols-1:
+        #                 pageContent += ","
+        #         pageContent += "\n"
             
-            f = open(dir_name+"/paginas/" + str(cur_page) + ".txt", "a")
+        #     f = open(dir_name+"/paginas/" + str(cur_page) + ".txt", "a")
 
-            f.write(pageContent)
+        #     f.write(pageContent)
 
-            f.close()
+        #     f.close()
 
-            cur_page += 1
+        #     cur_page += 1
 
     def obterChave(self):
         if self.nome_tab == "vinho":

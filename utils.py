@@ -7,14 +7,14 @@ def getRangeOfKey(key, data):
     qty = len(data)
 
     for x in range(0, qty):
-        if x == 0 and searchKey < data[x]['key']:
+        if x == 0 and str(searchKey) < str(data[x]['key']):
             keyRange = (0, 'left')
             break
-        elif x == qty - 1 and searchKey >= data[x]['key']:
+        elif x == qty - 1 and str(searchKey) >= str(data[x]['key']):
             keyRange = (x, 'right')
             break
         else:
-            if searchKey >= data[x]['key'] and searchKey < data[x + 1]['key']:
+            if str(searchKey) >= str(data[x]['key']) and str(searchKey) < str(data[x + 1]['key']):
                 keyRange = (x, 'right')
                 break
     

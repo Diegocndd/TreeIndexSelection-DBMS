@@ -3,14 +3,14 @@
 from estrutura import *
 
 def main():
-    vinho = Tabela("vinho.csv") # cria estrutura necessaria para a tabela
-    uva = Tabela("uva.csv")
+    # vinho = Tabela("vinho.csv") # cria estrutura necessaria para a tabela
+    # uva = Tabela("uva.csv")
     pais = Tabela("pais.csv")
     
-    vinho.carregarDados() # le os dados do csv e add na estrutura da tabela, caso necessario
-    uva.carregarDados()
+    # vinho.carregarDados() # le os dados do csv e add na estrutura da tabela, caso necessario
+    # uva.carregarDados()
     pais.carregarDados()
-        
+    print('finalizou')
     ## DESCOMENTE A PROXIMA LINHA CASO SEU TRABALHO SEJA SELECAO:
     #op = Operador(vinho, ["ano_colheita", "uva_id"], ["1990", "0"])
     ## significa: SELECT * FROM Vinho WHERE ano_colheita = '1990' AND uva_id = '0'

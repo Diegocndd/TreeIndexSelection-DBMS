@@ -2,7 +2,6 @@
 As funções de parse leem o conteúdo das páginas e retornam dicionários com as informações
 para serem tratadas pelo programa.
 """
-
 from ntpath import join
 from random import random, randint
 import math
@@ -14,10 +13,13 @@ import sys
 
 ORDER = 4
 ERROR_ROOT = 'root node does not exist'
-ATRIBUTO = 'ano_colheita'
+
+path_to_tree = ''
+atributo_chave = ''
+arquivo_base = ''
 
 def generateId(type):
-    f = open("current_ids.txt", "r")
+    f = open(path_to_tree + "current_ids.txt", "r")
     elements = f.read().split('\n')
     elements[:] = [x for x in elements if x]
 
@@ -35,7 +37,7 @@ def generateId(type):
         new_id = int(elements[2].split(":")[1].strip()) + 1
         elements[2] = "page_id: " + str(new_id)
 
-    f = open("current_ids.txt", "w")
+    f = open(path_to_tree + "current_ids.txt", "w")
     
     f.write("\n".join(elements))
 
@@ -43,7 +45,7 @@ def generateId(type):
     return str(new_id)
 
 def parseLeaf(titleNode):
-    f = open("paginas/folhas/" + titleNode + ".txt", "r")
+    f = open(path_to_tree + "paginas/folhas/" + titleNode + ".txt", "r")
     elements = f.read().split('\n')
     elements[:] = [x for x in elements if x]
 
@@ -73,7 +75,7 @@ def parseLeaf(titleNode):
     return dataList
 
 def parseData(titlePage):
-    f = open("paginas/dados/" + titlePage + ".txt", "r")
+    f = open(path_to_tree + "paginas/dados/" + titlePage + ".txt", "r")
     elements = f.read().split('\n')
     elements[:] = [x for x in elements if x]
 
@@ -102,7 +104,7 @@ def joinData(page_ids):
 def parseIndex(titleNode):
     f = None
     try:
-        f = open("paginas/indices/" + titleNode + ".txt", "r")
+        f = open(path_to_tree + "paginas/indices/" + titleNode + ".txt", "r")
     except:
         return ERROR_ROOT
 
@@ -137,7 +139,7 @@ def createIndex(data, titleNode='null', leftNode='null'):
         if len(titleNode) <= 5:
             titleNode = "node_" + titleNode
 
-    f = open("paginas/indices/" + titleNode + ".txt", "w")
+    f = open(path_to_tree + "paginas/indices/" + titleNode + ".txt", "w")
     newContent = ''
 
     for element in data:
@@ -155,7 +157,7 @@ def createLeaf(data, leafName='null', parent='null', next='null', back='null', m
 
     # gerar id para a nova folha e salvar arquivo
     new_leaf_id = generateId("leaf_node") if leafName == 'null' else leafName
-    f = open("paginas/folhas/leaf_" + new_leaf_id + ".txt", "w")
+    f = open(path_to_tree + "paginas/folhas/leaf_" + new_leaf_id + ".txt", "w")
 
     leafContent = ""
     if moving:
@@ -182,18 +184,18 @@ def createLeaf(data, leafName='null', parent='null', next='null', back='null', m
 
     if not moving:
         # salvar registros na pagina de registros
-        f = open("paginas/dados/page_" + new_page_id + ".txt", "w")
+        f = open(path_to_tree + "paginas/dados/page_" + new_page_id + ".txt", "w")
         pageContent = ""
-        
-        for element in data:
-            key = element['key']
-            id_element = element['id']
-            tipo = element['tipo']
-            rotulo = element['rotulo']
-            ano_colheita = element['ano_colheita']
 
-            pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(str(id_element), rotulo, str(ano_colheita), tipo)
-        
+        for element in data:
+            attrs = list(element.keys())
+
+            for attr in attrs:
+                if attr != 'key':
+                    pageContent += attr + ": " + str(element[attr]) + ","
+            pageContent = pageContent[:-1]
+            pageContent += '\n'
+
         f.write(pageContent)
         f.close()
         
@@ -207,37 +209,37 @@ def checkLeafMinimum(key, childNode, parentNode):
     for element in currentContent:
         if element["right"] == childNode:
             if element["key"] != key:
-                editIndex(parentNode, element["key"], newKey=key)
+                editIndex(parentNode, element["key"], newKey=key, path_to_tree=path_to_tree)
             break
 
 def shiftIndexLeft(titleNode):
-
     currentNode = parseIndex(titleNode)
+    try:
+        pos, parent, nodeParent = deepInfoIndex(titleNode)
 
-    pos, parent, nodeParent = deepInfoIndex(titleNode)
+        editIndex(nodeParent, parent["key"], newKey=currentNode[0]["key"], path_to_tree=path_to_tree)
 
-    editIndex(nodeParent, parent["key"], newKey=currentNode[0]["key"])
+        f = open(path_to_tree + "paginas/indices/"+titleNode+".txt", "r")
+        operations = f.read().split('\n')
+        operations[:] = [x for x in operations if x]
 
-    f = open("paginas/indices/"+titleNode+".txt", "r")
-    operations = f.read().split('\n')
-    operations[:] = [x for x in operations if x]
+        new_content = ""
 
-    new_content = ""
+        f.close()
 
-    f.close()
+        f = open(path_to_tree + "paginas/indices/"+titleNode+".txt", "w")
 
-    f = open("paginas/indices/"+titleNode+".txt", "w")
+        for i, el in enumerate(operations):
+            if i > 2:
+                new_content += el + "\n"
 
-    for i, el in enumerate(operations):
-        if i > 2:
-            new_content += el + "\n"
-
-    f.write(new_content)
-    f.close()
+        f.write(new_content)
+        f.close()
+    except:
+        print('ERRO AO REALIZAR SHIFT DE ELEMENTOS')
 
 
 def belowMinimum(titleNode):
-
     currentNode = parseLeaf(titleNode)
     backNodeName = currentNode[-1]["back"]
     nextNodeName = currentNode[-3]["next"]
@@ -312,7 +314,7 @@ def removeInLeaf(titleNode, key, check=True):
     arrayToSort = currentContent[:-3]
     pointersData = currentContent[-3:]
     
-    f = open("paginas/folhas/" + titleNode + ".txt", "w+", encoding="utf-8")
+    f = open(path_to_tree + "paginas/folhas/" + titleNode + ".txt", "w+", encoding="utf-8")
 
     leafContent = ""
     original_len = len(arrayToSort)
@@ -345,7 +347,7 @@ def removeInLeaf(titleNode, key, check=True):
 
 def addInLeaf(titleNode, data, pageId=None):
     # data é um array de dicionários
-    
+
     currentContent = parseLeaf(titleNode)
     arrayToSort = currentContent[:-3]
     pointersData = currentContent[-3:]
@@ -368,26 +370,33 @@ def addInLeaf(titleNode, data, pageId=None):
         registrosPag = parseData("page_" + page_id)
         
         # adicionar registro na pagina de registros existente
-        f = open("paginas/dados/page_" + page_id + ".txt", "w")
+        f = open(path_to_tree + "paginas/dados/page_" + page_id + ".txt", "w")
         pageContent = ""
 
         for element in registrosPag:
-            pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(element["id"], element["rotulo"], element["ano_colheita"], element["tipo"])
+            attrs = list(element.keys())
+
+            for attr in attrs:
+                if attr != 'key':
+                    pageContent += attr + ": " + str(element[attr]) + ","
+            pageContent = pageContent[:-1]
+            pageContent += '\n'
 
         for element in data:
-            key = element['key']
-            id_element = element['id']
-            tipo = element['tipo']
-            rotulo = element['rotulo']
-            ano_colheita = element['ano_colheita']
-            pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(str(id_element), rotulo, str(ano_colheita), tipo)
+            attrs = list(element.keys())
+
+            for attr in attrs:
+                if attr != 'key':
+                    pageContent += attr + ": " + str(element[attr]) + ","
+            pageContent = pageContent[:-1]
+            pageContent += '\n'
 
         f.write(pageContent)
         f.close()
 
     else:
         #chave ainda não está presente na folha
-        f = open("paginas/folhas/" + titleNode + ".txt", "w+", encoding="utf-8")
+        f = open(path_to_tree + "paginas/folhas/" + titleNode + ".txt", "w+", encoding="utf-8")
 
         # criar nova pagina de registro
         page_id = generateId("page_id") if not pageId else pageId
@@ -411,23 +420,32 @@ def addInLeaf(titleNode, data, pageId=None):
 
         if not pageId:
             # adicionar registro na pagina de registros criada
-            f = open("paginas/dados/page_" + page_id + ".txt", "w+")
+            f = open(path_to_tree + "paginas/dados/page_" + page_id + ".txt", "w+")
             pageContent = ""
 
             for element in data:
-                key = element['key']
-                id_element = element['id']
-                tipo = element['tipo']
-                rotulo = element['rotulo']
-                ano_colheita = element['ano_colheita']
+                attrs = list(element.keys())
 
-                pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(str(id_element), rotulo, str(ano_colheita), tipo)
+                for attr in attrs:
+                    if attr != 'key':
+                        pageContent += attr + ": " + str(element[attr]) + ","
+                pageContent = pageContent[:-1]
+                pageContent += '\n'
+
+            # for element in data:
+            #     key = element['key']
+            #     id_element = element['id']
+            #     tipo = element['tipo']
+            #     rotulo = element['rotulo']
+            #     ano_colheita = element['ano_colheita']
+
+            #     pageContent += "id: {},rotulo: {},ano_colheita: {},tipo: {}\n".format(str(id_element), rotulo, str(ano_colheita), tipo)
             
             f.write(pageContent)
             f.close() 
 
 def addInIndex(titleNode, data):
-    f = open("paginas/indices/" + titleNode + ".txt", "r")
+    f = open(path_to_tree + "paginas/indices/" + titleNode + ".txt", "r")
     oldContent = f.readlines()
     oldContent = ''.join(oldContent)
 
@@ -437,7 +455,7 @@ def addInIndex(titleNode, data):
 
     f.close()
 
-    f = open("paginas/indices/" + titleNode + ".txt", "w+", encoding="utf-8")
+    f = open(path_to_tree + "paginas/indices/" + titleNode + ".txt", "w+", encoding="utf-8")
     newContent = ''
 
     for element in ORDERDataNode(arrayToSort):
@@ -451,10 +469,10 @@ def addInIndex(titleNode, data):
     f.close()   
 
 def deleteFileLeaf(titleNode):
-    os.remove("paginas/folhas/" + titleNode + ".txt")
+    os.remove(path_to_tree + "paginas/folhas/" + titleNode + ".txt")
 
 def deleteFileNode(titleNode):
-    os.remove("paginas/indices/" + titleNode + ".txt")
+    os.remove(path_to_tree + "paginas/indices/" + titleNode + ".txt")
 
 def splitLeaf(titleNode):
     leafContent = parseLeaf(titleNode)
@@ -524,7 +542,7 @@ def splitLeaf(titleNode):
                 leftLeafName = "leaf_"+leftLeafName if leftLeafName != 'null' else leftLeafName
                 rightLeafName = "leaf_"+rightLeafName if rightLeafName != 'null' else rightLeafName
 
-                editIndex(parentName, key=keyParent, newLeft='null')
+                editIndex(parentName, key=keyParent, newLeft='null', path_to_tree=path_to_tree)
                 
                 addInIndex(parentName, [{
                     'key': rightContent[0]['key'],
@@ -532,7 +550,7 @@ def splitLeaf(titleNode):
                     'right': rightLeafName,
                 }])
                 
-                editLeaf(nextName, newBack=rightLeafName)
+                editLeaf(nextName, newBack=rightLeafName, path_to_tree=path_to_tree)
 
                 deleteFileLeaf(titleNode)
             else:
@@ -551,7 +569,7 @@ def splitLeaf(titleNode):
                 leftLeafName = "leaf_"+leftLeafName if leftLeafName != 'null' else leftLeafName
                 rightLeafName = "leaf_"+rightLeafName if rightLeafName != 'null' else rightLeafName
                 
-                editIndex(parentName, key=keyParent, newRight=leftLeafName)
+                editIndex(parentName, key=keyParent, newRight=leftLeafName, path_to_tree=path_to_tree)
 
                 addInIndex(parentName, [{
                     'key': rightContent[0]['key'],
@@ -559,8 +577,10 @@ def splitLeaf(titleNode):
                     'right': rightLeafName,
                 }])
                 
-                editLeaf(backName, newNext=leftLeafName)
-
+                try:
+                    editLeaf(backName, newNext=leftLeafName, path_to_tree=path_to_tree)
+                except:
+                    pass
                 deleteFileLeaf(titleNode)
 
 
@@ -569,52 +589,57 @@ def splitLeaf(titleNode):
 
 
 def insertData(data):
-    root = parseIndex('node_root')
+    try:
+        root = parseIndex('node_root')
 
-    if root == ERROR_ROOT:
-        # verifica se já existe algum nó-folha sendo construído
-        contentLeaf = os.listdir(path='./paginas/folhas')
-        if len(contentLeaf) == 0:
-            # se não existir, cria a primeira folha
-            createLeaf([data])
+        if root == ERROR_ROOT:
+            # verifica se já existe algum nó-folha sendo construído
+            contentLeaf = os.listdir(path=path_to_tree + 'paginas/folhas')
+            if len(contentLeaf) == 0:
+                # se não existir, cria a primeira folha
+                createLeaf([data])
+            else:
+                # se existir, adiciona na folha já existente
+                titleFile = contentLeaf[0].split('.')[0]
+                addInLeaf(titleFile, [data])
+                leafContent = parseLeaf(titleFile)
+            
+                # -3 porque desconsideramos as linhas do parent, do next e do back
+                if (len(leafContent) - 3 == ORDER): # se a folha estiver cheia, fazer o split e criar o root
+                    
+                    splitLeaf(titleFile)
         else:
-            # se existir, adiciona na folha já existente
-            titleFile = contentLeaf[0].split('.')[0]
-            addInLeaf(titleFile, [data])
-            leafContent = parseLeaf(titleFile)
-        
-            # -3 porque desconsideramos as linhas do parent, do next e do back
-            if (len(leafContent) - 3 == ORDER): # se a folha estiver cheia, fazer o split e criar o root
-                
-                splitLeaf(titleFile)
-    else:
-        # se o root existe, vamos percorrer a árvore para descobrir onde colocar o novo dado
-        actualNode = parseIndex('node_root')
-        referenceNode, position = getRangeOfKey(data['key'], actualNode)
-
-        page = actualNode[referenceNode][position]
-        
-        while(page.split('_')[0] != 'leaf'):
-            actualNode = parseIndex(page)
+            # se o root existe, vamos percorrer a árvore para descobrir onde colocar o novo dado
+            actualNode = parseIndex('node_root')
             referenceNode, position = getRangeOfKey(data['key'], actualNode)
 
             page = actualNode[referenceNode][position]
             
+            while(page.split('_')[0] != 'leaf'):
+                actualNode = parseIndex(page)
+                try:
+                    referenceNode, position = getRangeOfKey(data['key'], actualNode)
 
-        addInLeaf(page, [data])
-        leafContent = parseLeaf(page)
-        
-        if (len(leafContent) - 3 == ORDER):
-            splitLeaf(page)
+                    page = actualNode[referenceNode][position]
+                except:
+                    pass
+
+            addInLeaf(page, [data])
+            leafContent = parseLeaf(page)
+            
+            if (len(leafContent) - 3 == ORDER):
+                splitLeaf(page)
+    except:
+        return
 
 
 def removeData(key):
     registers = []
 
-    contentLeaf = os.listdir(path='./paginas/indices')
+    contentLeaf = os.listdir(path=path_to_tree + 'paginas/indices')
 
     if len(contentLeaf) == 0:
-        contentLeaf = os.listdir(path='./paginas/folhas')
+        contentLeaf = os.listdir(path=path_to_tree + 'paginas/folhas')
         startNode = contentLeaf[0][:-4]
 
         registers = searchInLeaf(startNode, key, "=") 
@@ -679,7 +704,7 @@ def deepInfoIndex(nodeTitle='', firstNode='node_root'):
             return deepInfoIndex(nodeTitle, firstNode=index['right'])
 
 def splitIndex(nodeTitle):
-    contentIndices = os.listdir(path='./paginas/indices')
+    contentIndices = os.listdir(path=path_to_tree + 'paginas/indices')
     
     if len(contentIndices) == 1: # então só existe o nó root
         nodeContent = parseIndex(nodeTitle)
@@ -695,15 +720,15 @@ def splitIndex(nodeTitle):
 
         for index in leftContent:
             if (index['left'] != 'null'):
-                editLeaf(index['left'], newParent=leftName)
+                editLeaf(index['left'], newParent=leftName, path_to_tree=path_to_tree)
             if (index['right'] != 'null'):
-                editLeaf(index['right'], newParent=leftName)
+                editLeaf(index['right'], newParent=leftName, path_to_tree=path_to_tree)
 
         for index in rightContent:
             if (index['left'] != 'null'):
-                editLeaf(index['left'], newParent=rightName)
+                editLeaf(index['left'], newParent=rightName, path_to_tree=path_to_tree)
             if (index['right'] != 'null'):
-                editLeaf(index['right'], newParent=rightName) 
+                editLeaf(index['right'], newParent=rightName, path_to_tree=path_to_tree) 
 
         deleteFileNode('node_root')
         createIndex([{
@@ -759,15 +784,15 @@ def splitIndex(nodeTitle):
             if nodeContent[0]['left'].split('_')[0] == 'leaf':
                 for index in leftContent:
                     if (index['left'] != 'null'):
-                        editLeaf(index['left'], newParent=leftName)
+                        editLeaf(index['left'], newParent=leftName, path_to_tree=path_to_tree)
                     if (index['right'] != 'null'):
-                        editLeaf(index['right'], newParent=leftName)
+                        editLeaf(index['right'], newParent=leftName, path_to_tree=path_to_tree)
 
                 for index in rightContent:
                     if (index['left'] != 'null'):
-                        editLeaf(index['left'], newParent=rightName)
+                        editLeaf(index['left'], newParent=rightName, path_to_tree=path_to_tree)
                     if (index['right'] != 'null'):
-                        editLeaf(index['right'], newParent=rightName)
+                        editLeaf(index['right'], newParent=rightName, path_to_tree=path_to_tree)
 
             createIndex(rightContent[1:], titleNode=rightName, leftNode=rightContent[0]["right"])
             createIndex(leftContent, titleNode=leftName)
@@ -778,7 +803,7 @@ def splitIndex(nodeTitle):
                     'right': rightName,
                     'left': 'null',
                 }])
-                editIndex(nodeParent, parent['key'], newRight=leftName)
+                editIndex(nodeParent, parent['key'], newRight=leftName, path_to_tree=path_to_tree)
                         
             if pos == 'left':
                 addInIndex(nodeParent, [{
@@ -787,84 +812,12 @@ def splitIndex(nodeTitle):
                     'left': leftName,
                 }])
 
-                editIndex(nodeParent, parent['key'], newLeft='null')
+                editIndex(nodeParent, parent['key'], newLeft='null', path_to_tree=path_to_tree)
                 
             if (len(parseIndex(nodeParent)) == ORDER - 1):
                 splitIndex(nodeParent)
 
             deleteFileNode(nodeTitle)
-
-
-def readInput():
-    # ler operacoes do arquivo de entrada e retornando uma lista de dicionarios para cada operacao
-    f = open("in.txt", "r")
-    operations = f.read().split('\n')
-    operations[:] = [x for x in operations if x]
-
-    # lendo primeira linha, aka informacao da quantidade filhos dos nos
-    prim_l = operations.pop(0)
-    if prim_l[:4] != "FLH/":
-        print("Primeira linha deve ser a qntd de filhos!")
-        return "",[]
-
-    ops = []
-
-    
-
-    for op in operations:
-        o = {}
-        if op[:4] == "INC:":
-            o["tipo"] = "INC"
-            o["valor_c"] = int(op[4:])
-        elif op[:4] == "REM:":
-            o["tipo"] = "REM"
-            o["valor_c"] = int(op[4:])
-        elif op[:5] == "BUS=:":
-            o["tipo"] = "BUS="
-            o["valor_c"] = int(op[5:])
-        elif op[:5] == "BUS>:":
-            o["tipo"] = "BUS>"
-            o["valor_c"] = int(op[5:])
-        elif op[:5] == "BUS<:":
-            o["tipo"] = "BUS<"
-            o["valor_c"] = int(op[5:])
-        else:
-            print("Ignorando operacao invalida")
-        ops.append(o)
-    f.close()
-
-    return prim_l, ops
-
-def fetchCSV(ano_colheita):
-    # buscar registros com ano_colheita especificado no vinhos.csv e retornar como dicionarios
-    f = open("vinhos.csv", "r")
-    registros = f.read().split('\n')
-    registros[:] = [x for x in registros if x]
-
-    registros.pop(0) # remover header
-
-    dataList = []
-
-    for reg in registros:
-        print(reg)
-        data = {}
-        reg_split = reg.split(',')
-        ano_c = int(reg_split[2])
-        if ano_c == ano_colheita:
-            data["id"] = reg_split[0]
-            data["rotulo"] = reg_split[1]
-            data["key"] = reg_split[2]
-            data["tipo"] = reg_split[3]
-            dataList.append(data)
-
-    return dataList
-
-def writeOutput(out):
-    # escrever saida em out.txt
-    f = open("out.txt", "w")
-
-    f.write(out)
-    f.close()
 
 def generateOutput(opType, opKey, value):
     # gerar saida de acordo com o tipo da operacao
@@ -943,10 +896,10 @@ def searchInLeaf(page, opKey, mode):
 def search(opKey, mode):
     registers = []
 
-    contentLeaf = os.listdir(path='./paginas/indices')
+    contentLeaf = os.listdir(path=path_to_tree + 'paginas/indices')
 
     if len(contentLeaf) == 0:
-        contentLeaf = os.listdir(path='./paginas/folhas')
+        contentLeaf = os.listdir(path=path_to_tree + 'paginas/folhas')
         startNode = contentLeaf[0][:-4]
 
         registers = searchInLeaf(startNode, opKey, mode) # retorna as tuplas encontradas 
@@ -962,7 +915,6 @@ def search(opKey, mode):
 
             while(page.split('_')[0] != 'leaf'):
                 actualNode = parseIndex(page)
-                print(actualNode)
                 referenceNode, position = getRangeOfKey(str(opKey), actualNode)
                 page = actualNode[referenceNode][position]
 
@@ -970,120 +922,53 @@ def search(opKey, mode):
         
     return registers
 
+def createBaseFiles(path):
+    newPath = path + 'paginas/'
+    os.makedirs(newPath)
+    os.makedirs(newPath + 'dados')
+    os.makedirs(newPath + 'folhas')
+    os.makedirs(newPath + 'indices')
+    f = open(path + "current_ids.txt", "w")
+    f.write("internal_node: 0\nleaf_node: 0\npage_id: 0")
+    f.close()
+
+def createTree(arquivo, atributo, dataToAdd=[], table='', attribute=''):
+    global atributo_chave
+    global arquivo_base
+    global path_to_tree
+
+    path_to_tree = 'tabelas/' + table + '/' + attribute + '/' 
+
+    if os.path.exists(path_to_tree + 'paginas/') == False:
+        createBaseFiles(path_to_tree)
+
+    atributo_chave = atributo
+    arquivo_base = arquivo
+
+    for data in dataToAdd:
+        print(data)
+        insertData(data)
+
+    # print(search('1984', '='))
+
 if len(sys.argv) > 1:
     if sys.argv[1] == "-reset":
+        table = sys.argv[2].split('=')[1]
+        attr = sys.argv[3].split('=')[1]
+        path_to_tree = 'tabelas/' + table + '/' + attr + '/' 
         # apagar toda a estrutura de indexacao e os registros
-        for mydir in ["paginas/dados/", "paginas/folhas/", "paginas/indices/"]:
+        for mydir in [path_to_tree + "paginas/dados/", path_to_tree + "paginas/folhas/", path_to_tree + "paginas/indices/"]:
             filelist = [ f for f in os.listdir(mydir) if f.endswith(".txt") ]
             for f in filelist:
                 os.remove(os.path.join(mydir, f))
 
         # resetar arquivo de current_ids
-        f = open("current_ids.txt", "w")
+        f = open(path_to_tree + "current_ids.txt", "w")
         reset_current_ids = "internal_node: 0\nleaf_node: 0\npage_id: 0"
         f.write(reset_current_ids)
         print("Tudo resetado")
         f.close()
         sys.exit()
-
-modo_teste = True
-if modo_teste:
-    # testar comandos sem o arquivo de entrada
-    # insertData({"key": "a", "tipo": "lalal", "rotulo": "opopopo", "id": "19", "ano_colheita": "1984"})
-    # insertData({"key": 'b', "tipo": "rose", "rotulo": "bla_bla", "id": '9', "ano_colheita": "2021"})
-    # insertData({"key": 'c', "tipo": "cabernet", "rotulo": "xxxxxx", "id": '155', "ano_colheita": "1904"})
-    # insertData({"key": "d", "tipo": "ssss", "rotulo": "bla_bla", "id": "30", "ano_colheita": "1866"})
-    # insertData({"key": "kakaka", "tipo": "ssss", "rotulo": "bla_bla", "id": "30", "ano_colheita": "2003"})
-    # insertData({"key": "uuu", "tipo": "hhhhh", "rotulo": "xyxyxyxy", "id": "344", "ano_colheita": "2003"})
-    # insertData({"key": "ui", "tipo": "lalal", "rotulo": "opopopo", "id": "19", "ano_colheita": "2003"})
-    # insertData({"key": "OP", "tipo": "lalal", "rotulo": "opopopo", "id": "20", "ano_colheita": "2003"})
-    # insertData({"key": "eeee", "tipo": "lalal", "rotulo": "opopopo", "id": "21", "ano_colheita": "2003"})
-    # insertData({"key": "leleo", "tipo": "lalal", "rotulo": "opopopo", "id": "22", "ano_colheita": "2003"})
-    # print(search('d', '='))
-    # removeData('eeee')
-    #insertData({"key": "9", "tipo": "hhhhh", "rotulo": "xyxyxyxy", "id": "344"})
-    #insertData({"key": "10", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "11", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "12", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "13", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "14", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "20", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "21", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "22", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "15", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "16", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #removeData(22)
-    #removeData(21)
-    
-    #insertData({"key": "16", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "17", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #removeData(17)
-    #removeData(15)
-    #removeData(23)
-    #insertData({"key": "18", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "19", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "20", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "21", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "22", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "23", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "24", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "25", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    #insertData({"key": "26", "tipo": "lalal", "rotulo": "opopopo", "id": "19"})
-    
-    #print(search(5000, '='))
-    #print(search(1889, '<'))
-    #print(search(1800, '<'))
-    pass
 else:
-    # ler e executar operacoes do arquivo de entrada
-
-    header, ops = readInput()
-
-    if ops:
-        output = header + "\n"
-        
-        for op in ops:
-            if op["tipo"] == "INC":
-                # buscar registros e inserir na indexacao
-                regs = fetchCSV(int(op["valor_c"]))
-                for reg in regs:
-                    insertData(reg)
-
-                # gerar saida da operacao de inclusao
-                output += generateOutput(op["tipo"], op["valor_c"], len(regs))
-            elif op["tipo"] == "REM":
-                # realizar remocao por chave
-                registers = removeData(int(op["valor_c"]))
-
-                # gerar saida da operacao de busca por igualdade
-                output += generateOutput(op["tipo"], op["valor_c"], registers)
-            elif op["tipo"] == "BUS=":
-                # realizar busca por igualdade
-                registers = search(int(op["valor_c"]), '=')
-
-                # gerar saida da operacao de busca por igualdade
-                output += generateOutput(op["tipo"], op["valor_c"], len(registers))
-            elif op["tipo"] == "BUS>":
-                # realizar busca por maior que
-                registers = search(int(op["valor_c"]), '>')
-                chaves = []
-
-                for reg in registers:
-                    if reg["ano_colheita"] not in chaves:
-                        chaves.append(reg["ano_colheita"])
-
-                # gerar saida da operacao de busca por maior que
-                output += generateOutput(op["tipo"], op["valor_c"], chaves)
-            elif op["tipo"] == "BUS<":
-                # realizar busca por menor que
-                registers = search(int(op["valor_c"]), '<')
-                chaves = []
-
-                for reg in registers:
-                    if reg["ano_colheita"] not in chaves:
-                        chaves.append(reg["ano_colheita"])
-
-                # gerar saida da operacao de busca por menor que
-                output += generateOutput(op["tipo"], op["valor_c"], chaves)
-
-        writeOutput(output)
+    # createTree('pais.csv', 'nome', dataToAdd=data, table='pais', attribute='nome')
+    pass

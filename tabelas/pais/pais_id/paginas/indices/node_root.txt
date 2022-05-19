@@ -1,0 +1,4 @@
+key: 2
+left: leaf_2 
+right: leaf_3
+
