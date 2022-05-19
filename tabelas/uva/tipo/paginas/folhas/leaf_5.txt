@@ -1,0 +1,12 @@
+key: rosÃƒÆ’Ã‚Â©
+page_id: 5
+
+key: rosÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©
+page_id: 4
+
+key: tinto
+page_id: 7
+
+next: leaf_3
+parent: node_root
+back: leaf_4

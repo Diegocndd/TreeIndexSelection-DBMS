@@ -1,0 +1,9 @@
+key: 18
+page_id: 19
+
+key: 19
+page_id: 20
+
+next: leaf_4
+parent: node_6
+back: leaf_18

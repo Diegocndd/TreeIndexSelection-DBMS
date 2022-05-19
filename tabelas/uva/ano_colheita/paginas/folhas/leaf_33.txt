@@ -1,0 +1,9 @@
+key: 1989
+page_id: 33
+
+key: 1992
+page_id: 41
+
+next: leaf_9
+parent: node_2
+back: leaf_32

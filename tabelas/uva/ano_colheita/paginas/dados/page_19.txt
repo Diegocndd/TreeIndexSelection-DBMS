@@ -1,0 +1,2 @@
+pagina_id: 2,slot_id: 8
+pagina_id: 6,slot_id: 0

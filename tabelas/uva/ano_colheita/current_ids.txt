@@ -1,0 +1,3 @@
+internal_node: 4
+leaf_node: 39
+page_id: 48

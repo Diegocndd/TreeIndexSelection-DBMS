@@ -1,0 +1,7 @@
+key: 1953
+left: node_3 
+right: node_4
+
+key: 1965
+left: null
+right: node_2

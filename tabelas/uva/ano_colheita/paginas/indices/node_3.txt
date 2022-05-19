@@ -1,0 +1,24 @@
+key: 1915
+left: leaf_28 
+right: leaf_29
+
+key: 1920
+left: null 
+right: leaf_26
+
+key: 1924
+left: null 
+right: leaf_27
+
+key: 1930
+left: null 
+right: leaf_21
+
+key: 1939
+left: null 
+right: leaf_24
+
+key: 1945
+left: null 
+right: leaf_25
+

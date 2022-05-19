@@ -1,0 +1,8 @@
+key: 16
+left: leaf_16 
+right: leaf_18
+
+key: 18
+left: null 
+right: leaf_19
+

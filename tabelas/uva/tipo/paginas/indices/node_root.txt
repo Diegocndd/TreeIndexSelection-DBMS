@@ -1,0 +1,8 @@
+key: rosÃƒÆ’Ã‚Â©
+left: null 
+right: leaf_3
+
+key: rosÃƒÆ’Ã‚Â©
+left: leaf_4 
+right: leaf_5
+

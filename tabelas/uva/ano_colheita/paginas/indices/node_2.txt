@@ -1,0 +1,36 @@
+key: 1974
+left: null 
+right: leaf_38
+
+key: 1979
+left: null 
+right: leaf_39
+
+key: 1984
+left: null 
+right: leaf_22
+
+key: 1987
+left: null 
+right: leaf_32
+
+key: 1989
+left: null 
+right: leaf_33
+
+key: 1993
+left: leaf_8 
+right: leaf_18
+
+key: 2003
+left: null 
+right: leaf_36
+
+key: 2007
+left: null 
+right: leaf_37
+
+key: 2013
+left: null 
+right: leaf_31
+
