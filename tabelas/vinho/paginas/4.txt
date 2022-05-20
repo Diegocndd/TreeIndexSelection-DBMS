@@ -1,0 +1,12 @@
+vinho_id: 36,rotulo: frosty-claret,ano_producao: 1964,uva_id: 20,pais_producao_id: 2
+vinho_id: 37,rotulo: warm-banylus,ano_producao: 1916,uva_id: 47,pais_producao_id: 3
+vinho_id: 38,rotulo: crunchy-burgundy,ano_producao: 1950,uva_id: 19,pais_producao_id: 2
+vinho_id: 39,rotulo: lower-chianti,ano_producao: 1920,uva_id: 7,pais_producao_id: 2
+vinho_id: 40,rotulo: worn-pinot,ano_producao: 1968,uva_id: 6,pais_producao_id: 2
+vinho_id: 41,rotulo: broad-claret,ano_producao: 1958,uva_id: 66,pais_producao_id: 2
+vinho_id: 42,rotulo: jovial-sherry,ano_producao: 1980,uva_id: 16,pais_producao_id: 2
+vinho_id: 43,rotulo: buoyant-lambrusco,ano_producao: 1934,uva_id: 32,pais_producao_id: 1
+vinho_id: 44,rotulo: black-chardonnay,ano_producao: 1916,uva_id: 47,pais_producao_id: 2
+vinho_id: 45,rotulo: fast-lambrusco,ano_producao: 1994,uva_id: 58,pais_producao_id: 2
+vinho_id: 46,rotulo: collinear-claret,ano_producao: 1930,uva_id: 21,pais_producao_id: 3
+vinho_id: 47,rotulo: canary-champagne,ano_producao: 1996,uva_id: 29,pais_producao_id: 0

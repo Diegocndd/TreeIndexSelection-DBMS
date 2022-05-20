@@ -1,0 +1,10 @@
+
+key: 30
+page_id: 31
+
+key: 31
+page_id: 32
+
+next: leaf_34
+parent: node_4
+back: leaf_30

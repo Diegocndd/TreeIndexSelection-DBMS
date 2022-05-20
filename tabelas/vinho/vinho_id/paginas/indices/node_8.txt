@@ -1,0 +1,8 @@
+key: 2
+left: null 
+right: node_4
+
+key: 6
+left: null 
+right: node_2
+

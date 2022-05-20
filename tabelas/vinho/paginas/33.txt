@@ -1,0 +1,12 @@
+vinho_id: 384,rotulo: persistent-albariño,ano_producao: 1924,uva_id: 9,pais_producao_id: 2
+vinho_id: 385,rotulo: factorial-chablis,ano_producao: 1970,uva_id: 55,pais_producao_id: 1
+vinho_id: 386,rotulo: ebony-chianti,ano_producao: 1996,uva_id: 29,pais_producao_id: 0
+vinho_id: 387,rotulo: coplanar-prosecco,ano_producao: 1920,uva_id: 4,pais_producao_id: 1
+vinho_id: 388,rotulo: perfect-chianti,ano_producao: 1934,uva_id: 32,pais_producao_id: 2
+vinho_id: 389,rotulo: freezing-port,ano_producao: 1912,uva_id: 64,pais_producao_id: 0
+vinho_id: 390,rotulo: rosy-prosecco,ano_producao: 2006,uva_id: 17,pais_producao_id: 1
+vinho_id: 391,rotulo: chalky-amarone,ano_producao: 1952,uva_id: 48,pais_producao_id: 3
+vinho_id: 392,rotulo: heather-dolcetto,ano_producao: 1920,uva_id: 10,pais_producao_id: 0
+vinho_id: 393,rotulo: closed-merlot,ano_producao: 1972,uva_id: 25,pais_producao_id: 1
+vinho_id: 394,rotulo: frigid-chianti,ano_producao: 1920,uva_id: 62,pais_producao_id: 2
+vinho_id: 395,rotulo: inventive-zinfandel,ano_producao: 1994,uva_id: 58,pais_producao_id: 2

@@ -1,0 +1,12 @@
+vinho_id: 132,rotulo: lime-auslese,ano_producao: 1988,uva_id: 53,pais_producao_id: 1
+vinho_id: 133,rotulo: tense-sauvignon,ano_producao: 1944,uva_id: 59,pais_producao_id: 1
+vinho_id: 134,rotulo: faint-barbaresco,ano_producao: 1920,uva_id: 7,pais_producao_id: 3
+vinho_id: 135,rotulo: kinetic-burgundy,ano_producao: 1958,uva_id: 52,pais_producao_id: 3
+vinho_id: 136,rotulo: coplanar-prosecco,ano_producao: 1944,uva_id: 59,pais_producao_id: 2
+vinho_id: 137,rotulo: adaptive-champagne,ano_producao: 1920,uva_id: 4,pais_producao_id: 3
+vinho_id: 138,rotulo: collinear-auslese,ano_producao: 1966,uva_id: 67,pais_producao_id: 2
+vinho_id: 139,rotulo: adagio-mead,ano_producao: 1916,uva_id: 5,pais_producao_id: 1
+vinho_id: 140,rotulo: each-mead,ano_producao: 2016,uva_id: 46,pais_producao_id: 1
+vinho_id: 141,rotulo: brave-pinot,ano_producao: 1928,uva_id: 54,pais_producao_id: 0
+vinho_id: 142,rotulo: ferocious-muscat,ano_producao: 1958,uva_id: 39,pais_producao_id: 1
+vinho_id: 143,rotulo: nippy-sherry,ano_producao: 2014,uva_id: 51,pais_producao_id: 3

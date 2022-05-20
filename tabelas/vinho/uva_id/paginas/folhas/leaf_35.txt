@@ -1,0 +1,12 @@
+key: 29
+page_id: 38
+
+key: 3
+page_id: 42
+
+key: 30
+page_id: 1
+
+next: leaf_9
+parent: node_1
+back: leaf_34

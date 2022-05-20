@@ -1,0 +1,12 @@
+vinho_id: 360,rotulo: customer-marsanne,ano_producao: 1968,uva_id: 27,pais_producao_id: 1
+vinho_id: 361,rotulo: champagne-rosé,ano_producao: 1920,uva_id: 7,pais_producao_id: 0
+vinho_id: 362,rotulo: scared-madeira,ano_producao: 1942,uva_id: 35,pais_producao_id: 3
+vinho_id: 363,rotulo: blaring-moscato,ano_producao: 1920,uva_id: 7,pais_producao_id: 1
+vinho_id: 364,rotulo: best-bardolino,ano_producao: 1974,uva_id: 57,pais_producao_id: 1
+vinho_id: 365,rotulo: future-marsanne,ano_producao: 1944,uva_id: 59,pais_producao_id: 0
+vinho_id: 366,rotulo: glad-pinot,ano_producao: 1948,uva_id: 49,pais_producao_id: 0
+vinho_id: 367,rotulo: muted-muscat,ano_producao: 1968,uva_id: 27,pais_producao_id: 2
+vinho_id: 368,rotulo: pizzicato-riesling,ano_producao: 1928,uva_id: 40,pais_producao_id: 3
+vinho_id: 369,rotulo: sunny-claret,ano_producao: 1936,uva_id: 63,pais_producao_id: 3
+vinho_id: 370,rotulo: plain-sauvignon,ano_producao: 1958,uva_id: 26,pais_producao_id: 2
+vinho_id: 371,rotulo: ascent-pinot,ano_producao: 1920,uva_id: 62,pais_producao_id: 3

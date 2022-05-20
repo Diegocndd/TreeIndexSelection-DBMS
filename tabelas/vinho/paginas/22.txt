@@ -1,0 +1,12 @@
+vinho_id: 252,rotulo: cool-mead,ano_producao: 1988,uva_id: 18,pais_producao_id: 1
+vinho_id: 253,rotulo: nice-cabernet,ano_producao: 1952,uva_id: 48,pais_producao_id: 3
+vinho_id: 254,rotulo: plain-shiraz,ano_producao: 1996,uva_id: 11,pais_producao_id: 3
+vinho_id: 255,rotulo: humble-merlot,ano_producao: 1964,uva_id: 60,pais_producao_id: 2
+vinho_id: 256,rotulo: optimal-albariño,ano_producao: 1988,uva_id: 18,pais_producao_id: 3
+vinho_id: 257,rotulo: indulgent-dolcetto,ano_producao: 2014,uva_id: 8,pais_producao_id: 1
+vinho_id: 258,rotulo: young-muscat,ano_producao: 1984,uva_id: 70,pais_producao_id: 3
+vinho_id: 259,rotulo: unary-lambrusco,ano_producao: 1968,uva_id: 27,pais_producao_id: 2
+vinho_id: 260,rotulo: wood-noir,ano_producao: 2014,uva_id: 51,pais_producao_id: 0
+vinho_id: 261,rotulo: principal-champagne,ano_producao: 1994,uva_id: 15,pais_producao_id: 1
+vinho_id: 262,rotulo: exact-port,ano_producao: 1968,uva_id: 68,pais_producao_id: 0
+vinho_id: 263,rotulo: grandioso-barbaresco,ano_producao: 1996,uva_id: 11,pais_producao_id: 2

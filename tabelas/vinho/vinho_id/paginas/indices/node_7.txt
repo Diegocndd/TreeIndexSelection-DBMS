@@ -1,0 +1,4 @@
+key: 14
+left: node_5 
+right: node_6
+

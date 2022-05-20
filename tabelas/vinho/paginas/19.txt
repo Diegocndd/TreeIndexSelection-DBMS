@@ -1,0 +1,12 @@
+vinho_id: 216,rotulo: brutal-burgundy,ano_producao: 1916,uva_id: 12,pais_producao_id: 0
+vinho_id: 217,rotulo: red-mead,ano_producao: 1996,uva_id: 11,pais_producao_id: 3
+vinho_id: 218,rotulo: poky-port,ano_producao: 1912,uva_id: 45,pais_producao_id: 2
+vinho_id: 219,rotulo: coherent-chablis,ano_producao: 1948,uva_id: 1,pais_producao_id: 0
+vinho_id: 220,rotulo: silver-malbec,ano_producao: 1958,uva_id: 34,pais_producao_id: 1
+vinho_id: 221,rotulo: intense-chardonnay,ano_producao: 1920,uva_id: 7,pais_producao_id: 3
+vinho_id: 222,rotulo: critical-amarone,ano_producao: 1972,uva_id: 25,pais_producao_id: 2
+vinho_id: 223,rotulo: breezy-chablis,ano_producao: 1920,uva_id: 73,pais_producao_id: 2
+vinho_id: 224,rotulo: central-madeira,ano_producao: 1992,uva_id: 33,pais_producao_id: 0
+vinho_id: 225,rotulo: curious-banylus,ano_producao: 1968,uva_id: 6,pais_producao_id: 3
+vinho_id: 226,rotulo: curious-malbec,ano_producao: 1966,uva_id: 67,pais_producao_id: 3
+vinho_id: 227,rotulo: kind-rosé,ano_producao: 1974,uva_id: 57,pais_producao_id: 1

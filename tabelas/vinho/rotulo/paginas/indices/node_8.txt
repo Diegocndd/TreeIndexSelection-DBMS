@@ -1,0 +1,8 @@
+key: shy-sauvignon
+left: null 
+right: node_6
+
+key: strong-chinon
+left: null 
+right: node_4
+

@@ -1,0 +1,12 @@
+vinho_id: 12,rotulo: parallel-chardonnay,ano_producao: 2014,uva_id: 8,pais_producao_id: 0
+vinho_id: 13,rotulo: concrete-zinfandel,ano_producao: 1988,uva_id: 18,pais_producao_id: 1
+vinho_id: 14,rotulo: cruel-albariño,ano_producao: 1916,uva_id: 47,pais_producao_id: 3
+vinho_id: 15,rotulo: vibrant-muscat,ano_producao: 1970,uva_id: 2,pais_producao_id: 0
+vinho_id: 16,rotulo: smart-claret,ano_producao: 1950,uva_id: 19,pais_producao_id: 3
+vinho_id: 17,rotulo: radiant-champagne,ano_producao: 1950,uva_id: 23,pais_producao_id: 0
+vinho_id: 18,rotulo: serious-bardolino,ano_producao: 1988,uva_id: 53,pais_producao_id: 2
+vinho_id: 19,rotulo: green-mead,ano_producao: 1934,uva_id: 32,pais_producao_id: 0
+vinho_id: 20,rotulo: khaki-malbec,ano_producao: 1950,uva_id: 23,pais_producao_id: 3
+vinho_id: 21,rotulo: strong-chinon,ano_producao: 1960,uva_id: 74,pais_producao_id: 2
+vinho_id: 22,rotulo: sluggish-pinot,ano_producao: 2018,uva_id: 71,pais_producao_id: 2
+vinho_id: 23,rotulo: mean-barolo,ano_producao: 1942,uva_id: 35,pais_producao_id: 2

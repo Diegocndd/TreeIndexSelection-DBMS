@@ -1,0 +1,9 @@
+key: 2
+page_id: 15
+
+key: 20
+page_id: 32
+
+next: leaf_33
+parent: node_1
+back: leaf_12

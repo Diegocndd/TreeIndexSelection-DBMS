@@ -1,0 +1,12 @@
+vinho_id: 156,rotulo: light-chianti,ano_producao: 1996,uva_id: 11,pais_producao_id: 0
+vinho_id: 157,rotulo: concentric-barolo,ano_producao: 1978,uva_id: 0,pais_producao_id: 1
+vinho_id: 158,rotulo: sparse-chianti,ano_producao: 1974,uva_id: 57,pais_producao_id: 1
+vinho_id: 159,rotulo: tractable-arneis,ano_producao: 1978,uva_id: 0,pais_producao_id: 1
+vinho_id: 160,rotulo: spicy-barbaresco,ano_producao: 1992,uva_id: 33,pais_producao_id: 3
+vinho_id: 161,rotulo: parallel-zinfandel,ano_producao: 1916,uva_id: 47,pais_producao_id: 2
+vinho_id: 162,rotulo: recursive-riesling,ano_producao: 1978,uva_id: 0,pais_producao_id: 3
+vinho_id: 163,rotulo: neat-chinon,ano_producao: 1994,uva_id: 15,pais_producao_id: 0
+vinho_id: 164,rotulo: stale-lambrusco,ano_producao: 1964,uva_id: 60,pais_producao_id: 3
+vinho_id: 165,rotulo: magnetic-chinon,ano_producao: 1936,uva_id: 63,pais_producao_id: 0
+vinho_id: 166,rotulo: acute-beaujolais,ano_producao: 1920,uva_id: 62,pais_producao_id: 3
+vinho_id: 167,rotulo: great-grappa,ano_producao: 1968,uva_id: 68,pais_producao_id: 2

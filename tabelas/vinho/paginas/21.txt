@@ -1,0 +1,12 @@
+vinho_id: 240,rotulo: fixed-sauvignon,ano_producao: 1996,uva_id: 22,pais_producao_id: 0
+vinho_id: 241,rotulo: burning-chablis,ano_producao: 1988,uva_id: 61,pais_producao_id: 0
+vinho_id: 242,rotulo: fat-muscat,ano_producao: 1928,uva_id: 36,pais_producao_id: 2
+vinho_id: 243,rotulo: charcoal-madeira,ano_producao: 1996,uva_id: 11,pais_producao_id: 2
+vinho_id: 244,rotulo: zesty-lambrusco,ano_producao: 1928,uva_id: 54,pais_producao_id: 1
+vinho_id: 245,rotulo: cold-barolo,ano_producao: 1916,uva_id: 12,pais_producao_id: 1
+vinho_id: 246,rotulo: humane-rosé,ano_producao: 1996,uva_id: 22,pais_producao_id: 1
+vinho_id: 247,rotulo: lenient-moscato,ano_producao: 1996,uva_id: 29,pais_producao_id: 3
+vinho_id: 248,rotulo: quick-merlot,ano_producao: 1980,uva_id: 16,pais_producao_id: 0
+vinho_id: 249,rotulo: nippy-dolcetto,ano_producao: 1988,uva_id: 61,pais_producao_id: 0
+vinho_id: 250,rotulo: partial-beaujolais,ano_producao: 1916,uva_id: 12,pais_producao_id: 1
+vinho_id: 251,rotulo: juvenile-moscato,ano_producao: 1994,uva_id: 58,pais_producao_id: 0

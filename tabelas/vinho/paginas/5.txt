@@ -1,0 +1,12 @@
+vinho_id: 48,rotulo: relaxed-lambrusco,ano_producao: 1934,uva_id: 37,pais_producao_id: 1
+vinho_id: 49,rotulo: achromatic-prosecco,ano_producao: 1998,uva_id: 50,pais_producao_id: 1
+vinho_id: 50,rotulo: acute-pinot,ano_producao: 1988,uva_id: 53,pais_producao_id: 1
+vinho_id: 51,rotulo: colorful-chinon,ano_producao: 1920,uva_id: 7,pais_producao_id: 2
+vinho_id: 52,rotulo: bright-chianti,ano_producao: 1958,uva_id: 26,pais_producao_id: 2
+vinho_id: 53,rotulo: ragged-sauvignon,ano_producao: 1958,uva_id: 26,pais_producao_id: 2
+vinho_id: 54,rotulo: annoying-zinfandel,ano_producao: 1964,uva_id: 20,pais_producao_id: 3
+vinho_id: 55,rotulo: customer-zinfandel,ano_producao: 1996,uva_id: 29,pais_producao_id: 0
+vinho_id: 56,rotulo: central-marsanne,ano_producao: 1968,uva_id: 27,pais_producao_id: 2
+vinho_id: 57,rotulo: buoyant-beaujolais,ano_producao: 1936,uva_id: 63,pais_producao_id: 0
+vinho_id: 58,rotulo: dyadic-prosecco,ano_producao: 1968,uva_id: 68,pais_producao_id: 3
+vinho_id: 59,rotulo: gray-auslese,ano_producao: 1964,uva_id: 60,pais_producao_id: 1

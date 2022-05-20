@@ -1,0 +1,84 @@
+key: 21
+left: null 
+right: leaf_22
+
+key: 23
+left: null 
+right: leaf_24
+
+key: 25
+left: null 
+right: leaf_26
+
+key: 27
+left: null 
+right: leaf_28
+
+key: 29
+left: null 
+right: leaf_30
+
+key: 30
+left: null 
+right: leaf_32
+
+key: 32
+left: null 
+right: leaf_34
+
+key: 34
+left: null 
+right: leaf_36
+
+key: 36
+left: null 
+right: leaf_38
+
+key: 38
+left: null 
+right: leaf_39
+
+key: 4
+left: leaf_4 
+right: leaf_40
+
+key: 40
+left: null 
+right: leaf_42
+
+key: 42
+left: null 
+right: leaf_44
+
+key: 44
+left: null 
+right: leaf_46
+
+key: 46
+left: null 
+right: leaf_48
+
+key: 48
+left: null 
+right: leaf_50
+
+key: 50
+left: null 
+right: leaf_52
+
+key: 52
+left: null 
+right: leaf_54
+
+key: 54
+left: null 
+right: leaf_56
+
+key: 56
+left: null 
+right: leaf_58
+
+key: 58
+left: null 
+right: leaf_59
+

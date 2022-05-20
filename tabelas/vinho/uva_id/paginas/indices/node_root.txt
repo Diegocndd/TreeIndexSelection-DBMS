@@ -1,0 +1,7 @@
+
+key: 41
+left: node_1 
+right: node_3
+key: 68
+left: null 
+right: node_4

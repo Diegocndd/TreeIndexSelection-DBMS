@@ -1,0 +1,12 @@
+vinho_id: 0,rotulo: jolly-barolo,ano_producao: 1996,uva_id: 30,pais_producao_id: 1
+vinho_id: 1,rotulo: roaring-claret,ano_producao: 2020,uva_id: 41,pais_producao_id: 0
+vinho_id: 2,rotulo: potential-chardonnay,ano_producao: 1968,uva_id: 6,pais_producao_id: 2
+vinho_id: 3,rotulo: bright-bardolino,ano_producao: 1994,uva_id: 15,pais_producao_id: 0
+vinho_id: 4,rotulo: mild-sauvignon,ano_producao: 1944,uva_id: 59,pais_producao_id: 1
+vinho_id: 5,rotulo: emerald-zinfandel,ano_producao: 1948,uva_id: 1,pais_producao_id: 2
+vinho_id: 6,rotulo: right-arneis,ano_producao: 1978,uva_id: 0,pais_producao_id: 3
+vinho_id: 7,rotulo: agile-barbaresco,ano_producao: 1916,uva_id: 47,pais_producao_id: 1
+vinho_id: 8,rotulo: brownian-chardonnay,ano_producao: 1996,uva_id: 11,pais_producao_id: 2
+vinho_id: 9,rotulo: decidable-amarone,ano_producao: 1968,uva_id: 68,pais_producao_id: 2
+vinho_id: 10,rotulo: ragged-chablis,ano_producao: 1928,uva_id: 36,pais_producao_id: 3
+vinho_id: 11,rotulo: shy-sauvignon,ano_producao: 1974,uva_id: 31,pais_producao_id: 0

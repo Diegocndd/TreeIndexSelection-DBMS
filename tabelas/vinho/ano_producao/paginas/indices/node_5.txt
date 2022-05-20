@@ -1,0 +1,8 @@
+key: 1988
+left: null 
+right: leaf_21
+
+key: 1996
+left: leaf_9 
+right: leaf_20
+

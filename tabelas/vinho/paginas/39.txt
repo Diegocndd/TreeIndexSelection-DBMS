@@ -1,0 +1,12 @@
+vinho_id: 456,rotulo: bright-blanc,ano_producao: 1970,uva_id: 55,pais_producao_id: 2
+vinho_id: 457,rotulo: chestnut-auslese,ano_producao: 1980,uva_id: 16,pais_producao_id: 1
+vinho_id: 458,rotulo: allegro-grappa,ano_producao: 1920,uva_id: 73,pais_producao_id: 1
+vinho_id: 459,rotulo: easy-shiraz,ano_producao: 1980,uva_id: 16,pais_producao_id: 3
+vinho_id: 460,rotulo: friendly-noir,ano_producao: 1968,uva_id: 68,pais_producao_id: 1
+vinho_id: 461,rotulo: flush-pinot,ano_producao: 1992,uva_id: 33,pais_producao_id: 0
+vinho_id: 462,rotulo: cold-grappa,ano_producao: 1916,uva_id: 5,pais_producao_id: 0
+vinho_id: 463,rotulo: sizzling-merlot,ano_producao: 1958,uva_id: 52,pais_producao_id: 2
+vinho_id: 464,rotulo: cautious-rosé,ano_producao: 1968,uva_id: 65,pais_producao_id: 0
+vinho_id: 465,rotulo: mode-prosecco,ano_producao: 1998,uva_id: 42,pais_producao_id: 3
+vinho_id: 466,rotulo: investor-barbaresco,ano_producao: 1960,uva_id: 74,pais_producao_id: 0
+vinho_id: 467,rotulo: hard-arneis,ano_producao: 1996,uva_id: 22,pais_producao_id: 0

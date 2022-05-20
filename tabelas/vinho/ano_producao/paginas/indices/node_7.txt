@@ -1,0 +1,4 @@
+key: 1950
+left: node_3 
+right: node_4
+

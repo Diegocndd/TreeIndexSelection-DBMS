@@ -1,0 +1,10 @@
+
+key: 67
+page_id: 68
+
+key: 68
+page_id: 69
+
+next: leaf_70
+parent: node_2
+back: leaf_66

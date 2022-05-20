@@ -4,15 +4,18 @@ from estrutura import *
 
 def main():
     # vinho = Tabela("vinho.csv") # cria estrutura necessaria para a tabela
-    uva = Tabela("uva.csv")
-    #pais = Tabela("pais.csv")
+    # uva = Tabela("uva.csv")
+    pais = Tabela("pais.csv")
     
     # vinho.carregarDados() # le os dados do csv e add na estrutura da tabela, caso necessario
-    uva.carregarDados()
-    #pais.carregarDados()
+    # uva.carregarDados()
+    pais.carregarDados()
     print('finalizou')
     ## DESCOMENTE A PROXIMA LINHA CASO SEU TRABALHO SEJA SELECAO:
-    op = Operador(uva, ["ano_colheita", "pais_origem_id"], ["1974","0"])
+    # op = Operador(vinho, ["rotulo", "ano_producao"], ["jolly-barolo", "1996"])
+    # op = Operador(uva, ["pais_origem_id", "ano_colheita"], ["0","1974"])
+    # op = Operador(uva, ["ano_colheita", "pais_origem_id"], ["1974","0"])
+    op = Operador(pais, ["nome"], ["Argentina"])
     ## significa: SELECT * FROM Vinho WHERE ano_colheita = '1990' AND uva_id = '0'
     ## IMPORTANTE: isso eh so um exemplo, pode ser outra tabela e ter mais ou menos colunas/constantes.
     ## genericamente: Operador(tabela, lista_colunas, lista_constantes): 

@@ -1,0 +1,8 @@
+key: 1978
+left: null 
+right: node_5
+
+key: 2006
+left: null 
+right: node_6
+

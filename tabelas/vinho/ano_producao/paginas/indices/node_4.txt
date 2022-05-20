@@ -1,0 +1,12 @@
+key: 1960
+left: null 
+right: leaf_17
+
+key: 1968
+left: leaf_11 
+right: leaf_30
+
+key: 1968
+left: null 
+right: leaf_31
+

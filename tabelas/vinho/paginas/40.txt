@@ -1,0 +1,12 @@
+vinho_id: 468,rotulo: forward-lambrusco,ano_producao: 1928,uva_id: 54,pais_producao_id: 3
+vinho_id: 469,rotulo: bitter-chinon,ano_producao: 1960,uva_id: 74,pais_producao_id: 1
+vinho_id: 470,rotulo: rowdy-barbaresco,ano_producao: 1994,uva_id: 15,pais_producao_id: 1
+vinho_id: 471,rotulo: exothermic-shiraz,ano_producao: 1920,uva_id: 7,pais_producao_id: 3
+vinho_id: 472,rotulo: weighted-amarone,ano_producao: 1956,uva_id: 3,pais_producao_id: 2
+vinho_id: 473,rotulo: hot-claret,ano_producao: 1956,uva_id: 3,pais_producao_id: 0
+vinho_id: 474,rotulo: ternary-arneis,ano_producao: 1970,uva_id: 55,pais_producao_id: 3
+vinho_id: 475,rotulo: molto-port,ano_producao: 1978,uva_id: 24,pais_producao_id: 0
+vinho_id: 476,rotulo: finite-noir,ano_producao: 1958,uva_id: 66,pais_producao_id: 2
+vinho_id: 477,rotulo: cruel-cabernet,ano_producao: 1958,uva_id: 66,pais_producao_id: 0
+vinho_id: 478,rotulo: unsorted-muscat,ano_producao: 1958,uva_id: 26,pais_producao_id: 3
+vinho_id: 479,rotulo: glad-prosecco,ano_producao: 1974,uva_id: 31,pais_producao_id: 0

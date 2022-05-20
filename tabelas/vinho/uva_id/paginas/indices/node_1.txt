@@ -1,0 +1,40 @@
+key: 11
+left: leaf_26 
+right: leaf_27
+
+key: 15
+left: null 
+right: leaf_20
+
+key: 18
+left: null 
+right: leaf_21
+
+key: 2
+left: null 
+right: leaf_32
+
+key: 21
+left: null 
+right: leaf_33
+
+key: 24
+left: null 
+right: leaf_34
+
+key: 29
+left: null 
+right: leaf_35
+
+key: 31
+left: null 
+right: leaf_16
+
+key: 35
+left: null 
+right: leaf_24
+
+key: 37
+left: null 
+right: leaf_25
+

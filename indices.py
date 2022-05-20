@@ -94,7 +94,7 @@ def parseData(titlePage):
     return dataList
 
 def parseRecords(titlePage, tabela, condicoes):
-    
+    IOs = 0
     pagList = parseData(titlePage)
 
     pagList = sorted(pagList, key = lambda i: (i['pagina_id'], i['slot_id']))
@@ -115,7 +115,7 @@ def parseRecords(titlePage, tabela, condicoes):
         cur_pagina = parsePage(tabela, pag_ant)
 
         for pag in pagList:
-            
+            IOs += 1
             if int(pag['pagina_id']) != pag_ant:
                 pag_ant = int(pag['pagina_id'])
                 cur_pagina = parsePage(tabela, pag_ant)
@@ -129,7 +129,7 @@ def parseRecords(titlePage, tabela, condicoes):
             valid = True
 
             for i, col_c in enumerate(col_condicoes):
-                
+
                 if cur_pagina[int(pag['slot_id'])][col_c] != val_condicoes[i]:
                     valid = False
                     break
@@ -145,7 +145,7 @@ def parseRecords(titlePage, tabela, condicoes):
         f.close()
 
     
-    return total, nTuplas
+    return total, nTuplas, IOs
 
 def joinData(page_ids):
     # mesclar registros de paginas de dados do resultado de busca 
@@ -158,9 +158,9 @@ def joinData(page_ids):
 
 def joinData2(page_id, tabela, condicoes):
 
-    registers, nT = parseRecords("page_"+str(page_id), tabela, condicoes)
+    registers, nT, IOs = parseRecords("page_"+str(page_id), tabela, condicoes)
 
-    return registers, nT
+    return registers, nT, IOs
 
 def parseIndex(titleNode):
     global path_to_tree
@@ -964,8 +964,8 @@ def searchInLeaf(page, opKey, mode, tabela=None, condicoes=None):
             res, nT = joinData(page_ids)
             return res, nT, 0
         else:
-            res, nT = joinData2(page_ids[0], tabela, condicoes)
-            return res, nT, 0
+            res, nT, IOs = joinData2(page_ids[0], tabela, condicoes)
+            return res, nT, IOs
     return page_ids, 0, 0
 
 def search(tabela, indice, opKey, mode, condicoes):

@@ -1,0 +1,12 @@
+vinho_id: 432,rotulo: white-sherry,ano_producao: 1920,uva_id: 4,pais_producao_id: 2
+vinho_id: 433,rotulo: linear-chardonnay,ano_producao: 1910,uva_id: 56,pais_producao_id: 1
+vinho_id: 434,rotulo: free-mead,ano_producao: 1980,uva_id: 16,pais_producao_id: 2
+vinho_id: 435,rotulo: gilded-noir,ano_producao: 2016,uva_id: 46,pais_producao_id: 1
+vinho_id: 436,rotulo: heartless-zinfandel,ano_producao: 1996,uva_id: 22,pais_producao_id: 2
+vinho_id: 437,rotulo: direct-grappa,ano_producao: 2002,uva_id: 13,pais_producao_id: 0
+vinho_id: 438,rotulo: simple-auslese,ano_producao: 1968,uva_id: 65,pais_producao_id: 3
+vinho_id: 439,rotulo: dry-bardolino,ano_producao: 1960,uva_id: 74,pais_producao_id: 2
+vinho_id: 440,rotulo: trite-champagne,ano_producao: 1998,uva_id: 50,pais_producao_id: 2
+vinho_id: 441,rotulo: bold-barbaresco,ano_producao: 1934,uva_id: 37,pais_producao_id: 3
+vinho_id: 442,rotulo: shiny-chianti,ano_producao: 1936,uva_id: 63,pais_producao_id: 2
+vinho_id: 443,rotulo: libretto-sherry,ano_producao: 1934,uva_id: 37,pais_producao_id: 2

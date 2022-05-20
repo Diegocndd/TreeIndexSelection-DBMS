@@ -1,0 +1,12 @@
+vinho_id: 144,rotulo: chilly-prosecco,ano_producao: 1994,uva_id: 15,pais_producao_id: 1
+vinho_id: 145,rotulo: pallid-chablis,ano_producao: 1916,uva_id: 12,pais_producao_id: 2
+vinho_id: 146,rotulo: happy-champagne,ano_producao: 1996,uva_id: 29,pais_producao_id: 1
+vinho_id: 147,rotulo: bone-zinfandel,ano_producao: 1988,uva_id: 18,pais_producao_id: 0
+vinho_id: 148,rotulo: nondeterministic-auslese,ano_producao: 1980,uva_id: 16,pais_producao_id: 1
+vinho_id: 149,rotulo: messy-auslese,ano_producao: 1920,uva_id: 62,pais_producao_id: 2
+vinho_id: 150,rotulo: auburn-zinfandel,ano_producao: 1988,uva_id: 18,pais_producao_id: 2
+vinho_id: 151,rotulo: absolute-rosé,ano_producao: 1974,uva_id: 57,pais_producao_id: 3
+vinho_id: 152,rotulo: isomorphic-burgundy,ano_producao: 1928,uva_id: 54,pais_producao_id: 1
+vinho_id: 153,rotulo: blue-rosé,ano_producao: 1988,uva_id: 61,pais_producao_id: 2
+vinho_id: 154,rotulo: cream-cabernet,ano_producao: 1996,uva_id: 22,pais_producao_id: 0
+vinho_id: 155,rotulo: champagne-banylus,ano_producao: 2014,uva_id: 8,pais_producao_id: 3
